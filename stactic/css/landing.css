@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #e8ecff, #cfd9ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  h1 {
+    color: #3a3aff;
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .btn {
+    background: #3a3aff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(180deg, #f0f4ff 0%, #e3e8ff 100%);
+        color: #333;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+      
+      header {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      
+      h1 {
+        color: #3a3aff;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .slogan {
+        font-size: 1.1rem;
+        color: #555;
+      }
+      
+      .main-content {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 2rem;
+      }
+      
+      .card p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .btn {
+        background-color: #3a3aff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      
+      .btn:hover {
+        background-color: #2e2edb;
+        transform: translateY(-2px);
+      }
+      
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #555;
+      }
+      
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #2e2edb;
+  }
+  

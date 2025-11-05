@@ -1,0 +1,7 @@
+#Ce sont les seules dépendances nécessaires pour lancer l'interface et tester les pages web.
+
+## 📦 `requirements.txt`
+
+```txt
+Flask==3.0.3
+requests==2.31.0
