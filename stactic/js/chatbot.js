@@ -1,7 +1,7 @@
 const chatBody = document.querySelector(".chat-body");
 const messageInput = document.querySelector(".message-input");
 const sendMessageButton = document.querySelector("#send-message");
-const chatbotToggle = document.querySelector("#chatbot-toggler");
+const chatbotToggler = document.querySelector("#chatbot-toggler");
 const closeChatbot = document.querySelector("#close-chatbot");
 
 const userData = {
@@ -36,6 +36,7 @@ const handleOutgoingMessage = (e) => {
   e.preventDefault();
   userData.message = messageInput.value.trim();
   messageInput.value = ""; // nettoie le textarea après l'envoie du message
+  messageInput.dispatchEvent(new Event("input"));
 
   // Créer et afficher le message utilisateur sortant
   const messageContent = `<div class="message-text"></div>`;
@@ -101,5 +102,5 @@ messageInput.addEventListener("input", () => {
  document.querySelector(".chat-form").appendChild(picker);
 
 sendMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e))
-chatbot-toggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 closeChatbot.addEventListener("click", () =>  document.body.classList.remove("show-chatbot"));
