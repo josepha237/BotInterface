@@ -1,4 +1,4 @@
-# 🦋 Wise Chatbot - Interface Flask
+# Bot4Univ - Interface Flask
 
 Ce projet propose une **interface web fluide et responsive** pour un chatbot construit avec **Flask**, **HTML**, **CSS** et **JavaScript**.  
 Pour l’instant, la partie IA (Rasa) n’est pas encore intégrée : cette version permet de tester uniquement **le design, la navigation et l’interactivité** du chatbot.
@@ -16,7 +16,7 @@ Pour l’instant, la partie IA (Rasa) n’est pas encore intégrée : cette vers
 
 ## 🧱 Structure du projet
 
-wise_chatbot/
+Bot4Univ/
 │
 ├── app.py
 ├── requirements.txt
