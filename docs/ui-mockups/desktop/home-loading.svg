@@ -1,0 +1,128 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desktop Home Page - Loading State -->
+  <title>BotInterface - État de chargement</title>
+  <desc>Mockup desktop montrant le bot en train de répondre</desc>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f8f9fa"/>
+  
+  <!-- Header Section -->
+  <g id="header">
+    <rect width="1920" height="70" fill="#007bff"/>
+    
+    <!-- Logo -->
+    <circle cx="40" cy="35" r="20" fill="#ffffff" opacity="0.9"/>
+    <text x="40" y="40" font-family="Inter, sans-serif" font-size="16" fill="#007bff" text-anchor="middle" font-weight="bold">B</text>
+    
+    <!-- Title -->
+    <text x="80" y="44" font-family="Inter, sans-serif" font-size="24" fill="#ffffff" font-weight="600">
+      🤖 BotInterface
+    </text>
+    
+    <!-- Settings icon -->
+    <g transform="translate(1850, 25)">
+      <circle cx="15" cy="15" r="15" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="15" cy="15" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Chat Messages Area -->
+  <g id="chat-area">
+    <!-- Previous message - User -->
+    <g id="message-user-1" transform="translate(0, 100)">
+      <rect x="1100" y="0" width="700" height="80" rx="12" fill="#e3f2fd"/>
+      <text x="1120" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+        Quelle est la météo aujourd'hui ?
+      </text>
+      <text x="1780" y="65" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">
+        Vous · À l'instant
+      </text>
+    </g>
+    
+    <!-- Loading message - Bot -->
+    <g id="message-bot-loading" transform="translate(0, 210)">
+      <!-- Bot avatar -->
+      <circle cx="140" cy="40" r="25" fill="#007bff"/>
+      <text x="140" y="47" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">
+        B
+      </text>
+      
+      <!-- Loading message container -->
+      <rect x="180" y="0" width="400" height="80" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+      
+      <!-- "Bot is typing..." text -->
+      <text x="200" y="30" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" font-style="italic">
+        Le bot est en train d'écrire
+      </text>
+      
+      <!-- Animated dots (represented as three circles) -->
+      <g id="typing-dots">
+        <circle cx="220" cy="52" r="5" fill="#007bff" opacity="0.7">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0s"/>
+        </circle>
+        <circle cx="245" cy="52" r="5" fill="#007bff" opacity="0.7">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0.2s"/>
+        </circle>
+        <circle cx="270" cy="52" r="5" fill="#007bff" opacity="0.7">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0.4s"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Previous conversation context -->
+    <g id="previous-messages" opacity="0.5">
+      <text x="500" y="400" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">
+        ··· Conversation précédente ···
+      </text>
+    </g>
+  </g>
+  
+  <!-- Input Section - Disabled during loading -->
+  <g id="input-section" opacity="0.6">
+    <!-- Input container background -->
+    <rect y="960" width="1920" height="120" fill="#ffffff"/>
+    <line x1="0" y1="960" x2="1920" y2="960" stroke="#dee2e6" stroke-width="1"/>
+    
+    <!-- Input field - disabled -->
+    <rect x="360" y="990" width="1100" height="60" rx="30" fill="#e9ecef" stroke="#ced4da" stroke-width="1"/>
+    <text x="400" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#adb5bd">
+      En attente de la réponse du bot...
+    </text>
+    
+    <!-- Send button - disabled -->
+    <g id="send-button-disabled">
+      <rect x="1490" y="990" width="120" height="60" rx="30" fill="#6c757d"/>
+      <text x="1550" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Envoyer
+      </text>
+    </g>
+  </g>
+  
+  <!-- Loading indicator overlay (optional) -->
+  <g id="loading-overlay" opacity="0.3">
+    <defs>
+      <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#e9ecef;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
+        <animateTransform
+          attributeName="gradientTransform"
+          type="translate"
+          from="-1 0"
+          to="1 0"
+          dur="2s"
+          repeatCount="indefinite"/>
+      </linearGradient>
+    </defs>
+  </g>
+  
+  <!-- Status indicator -->
+  <g id="status-indicator" transform="translate(960, 850)">
+    <circle cx="0" cy="0" r="8" fill="#28a745">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="15" y="5" font-family="Inter, sans-serif" font-size="14" fill="#28a745" font-weight="500">
+      Connexion active
+    </text>
+  </g>
+</svg>

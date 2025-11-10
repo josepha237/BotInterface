@@ -1,27 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bot4Univ</title>
-  <link rel="stylesheet" href="/stactic/css/landing.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bot4Univ — Assistant Universitaire Intelligent</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <header class="header landing-header">
+      <div class="header-content">
+        <div class="logo-section">
+          <a href="/" class="brand">
+            <img src="/static/img/logo.jpg" alt="Bot4Univ Logo" class="brand-logo">
+            <span class="brand-name">Bot4Univ</span>
+          </a>
+        </div>
 
-<body>
-  <header class="header">
-    <h1>Bot4Univ</h1>
-    <p class="slogan">Votre assistant intelligent et bienveillant 👌</p>
-  </header>
+        <nav class="nav-center" aria-label="Navigation principale">
+          <a class="nav-link" href="#accueil">Accueil</a>
+          <a class="nav-link" href="#features">Fonctionnalités</a>
+          <a class="nav-link" href="#apropos">À propos</a>
+          <a class="nav-link" href="https://www.univ-douala.cm/" target="_blank" rel="noopener noreferrer" aria-label="Site de l'Université de Douala (nouvelle fenêtre)">Université</a>
+        </nav>
+        
+        <div class="header-actions">
+          <a class="btn-primary desktop-only" href="/app">Commencer</a>
+          <button class="menu-toggle mobile-only" id="menuToggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-  <main>
-    <div class="card">
-      <p>Discutez avec Bot4Univ et obtenez des réponses instantanées et utiles.</p>
-      <button id="startChat" class="btn">💬 Commencer la discussion</button>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-content">
+        <nav class="mobile-nav" aria-label="Navigation mobile">
+          <a class="mobile-nav-link" href="#accueil">Accueil</a>
+          <a class="mobile-nav-link" href="#features">Fonctionnalités</a>
+          <a class="mobile-nav-link" href="#apropos">À propos</a>
+          <a class="mobile-nav-link" href="https://www.univ-douala.cm/" target="_blank" rel="noopener noreferrer">Université</a>
+        </nav>
+        <div class="mobile-menu-footer">
+          <a class="btn-secondary large mobile-btn" href="{{ PREINSCRIPTION_URL }}" target="_blank" rel="noopener noreferrer">Préinscription UDo</a>
+          <a class="btn-primary large mobile-btn" href="/app">Commencer</a>
+        </div>
+      </div>
     </div>
-  </main>
 
-  <footer>© 2025 Bot4Univ — Créé avec amour 💙  par le Groupe 19 sous la supervion de Dr Moskoulai</footer>
-  
-  <script src="/stactic/js/landing.js"></script>
-</body>
+    <main class="landing-main">
+      <section id="accueil" class="hero" role="region" aria-labelledby="hero-title">
+          <div class="hero-left">
+            <h1 id="hero-title" class="hero-title">
+              <span class="hero-line">Votre Assistant</span>
+              <span class="hero-line">Intelligent</span>
+              <span class="hero-line hero-line--accent">Universitaire</span>
+            </h1>
+            <p class="hero-subtitle">Bot4Univ — Assistant intelligent dédié aux préinscriptions universitaires, conçu spécifiquement pour accompagner la préinscription à l'Université de Douala.</p>
+
+            <div class="hero-ctas">
+              <a class="btn-primary large" href="/app">🚀 Commencer</a>
+              <a class="btn-secondary large" href="{{ PREINSCRIPTION_URL }}" target="_blank" rel="noopener noreferrer">🎓 Préinscription UDo</a>
+            </div>
+
+            <ul class="trust-list" aria-hidden="false">
+              <li class="trust-item">✓ Gratuit</li>
+              <li class="trust-item">✓ Open Source</li>
+              <li class="trust-item">✓ Sécurisé</li>
+            </ul>
+          </div>
+
+        <div class="hero-right">
+          <!-- Use the static copy so the server can serve it reliably -->
+          <img src="/static/img/landing.svg" alt="Aperçu de l'interface Bot4Univ" class="hero-preview">
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <h2 class="section-title">Ce que vous pouvez faire</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon">💬</div>
+            <h3>Conversation en temps réel</h3>
+            <p>Échangez avec le bot et conservez l'historique des sessions.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Réponses rapides</h3>
+            <p>Optimisé pour la latence faible et l'expérience responsive.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Sécurité & confidentialité</h3>
+            <p>Contrôlez les données et conservez la propriété de vos conversations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="apropos" class="about">
+        <div class="about-content">
+          <h2 class="section-title">À propos de Bot4Univ</h2>
+          <div class="about-text">
+            <p>Bot4Univ est un assistant intelligent développé spécifiquement pour l'écosystème universitaire. Notre mission est de faciliter l'accès à l'information et d'améliorer l'expérience d'apprentissage pour les étudiants et les enseignants.</p>
+            <p>Conçu avec les dernières technologies d'intelligence artificielle, Bot4Univ offre des réponses contextuelles, rapides et pertinentes à vos questions académiques.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Open Source</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Disponible</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Questions</div>
+            </div>
+          </div>
+          <div class="about-team">
+            <h3>Équipe de développement</h3>
+            <p><strong>Groupe 19</strong> — Sous la coordination de <strong>Dr Justin Moskolai</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="docs" class="docs-cta">
+        <h2>Prêt à commencer ?</h2>
+        <p>Suivez la documentation pour connecter une API de bot et personnaliser le comportement.</p>
+        <a class="btn-primary" href="/app">Lancer le chat</a>
+      </section>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2025 Bot4Univ — Construit avec amour ❤ par le groupe 19 sous la coordination de Dr Justin Moskolai.</p>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+      });
+      
+      // Close menu when clicking a link
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        });
+      });
+      
+      // Close menu when clicking outside
+      mobileMenu.addEventListener('click', (e) => {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      });
+    </script>
+  </body>
 </html>

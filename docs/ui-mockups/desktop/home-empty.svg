@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desktop Home Page - Empty State -->
+  <title>BotInterface - État initial (vide)</title>
+  <desc>Mockup desktop de la page d'accueil sans conversation</desc>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f8f9fa"/>
+  
+  <!-- Header Section - 70px height -->
+  <g id="header">
+    <rect width="1920" height="70" fill="#007bff"/>
+    
+    <!-- Logo placeholder -->
+    <circle cx="40" cy="35" r="20" fill="#ffffff" opacity="0.9"/>
+    <text x="40" y="40" font-family="Inter, sans-serif" font-size="16" fill="#007bff" text-anchor="middle" font-weight="bold">B</text>
+    
+    <!-- Title -->
+    <text x="80" y="44" font-family="Inter, sans-serif" font-size="24" fill="#ffffff" font-weight="600">
+      🤖 BotInterface
+    </text>
+    
+    <!-- Settings icon -->
+    <g transform="translate(1850, 25)">
+      <circle cx="15" cy="15" r="15" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="15" cy="15" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <line x1="15" y1="5" x2="15" y2="8" stroke="#ffffff" stroke-width="2"/>
+      <line x1="15" y1="22" x2="15" y2="25" stroke="#ffffff" stroke-width="2"/>
+      <line x1="5" y1="15" x2="8" y2="15" stroke="#ffffff" stroke-width="2"/>
+      <line x1="22" y1="15" x2="25" y2="15" stroke="#ffffff" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Main Content Area -->
+  <g id="main-content">
+    <!-- Empty state illustration -->
+    <g transform="translate(960, 440)">
+      <!-- Robot icon -->
+      <circle cx="0" cy="0" r="80" fill="#e3f2fd" opacity="0.5"/>
+      <rect x="-50" y="-30" width="100" height="80" rx="10" fill="#007bff" opacity="0.7"/>
+      <circle cx="-25" cy="-10" r="12" fill="#ffffff"/>
+      <circle cx="25" cy="-10" r="12" fill="#ffffff"/>
+      <rect x="-30" y="15" width="60" height="8" rx="4" fill="#ffffff" opacity="0.8"/>
+      
+      <!-- Antenna -->
+      <line x1="0" y1="-30" x2="0" y2="-60" stroke="#007bff" stroke-width="3"/>
+      <circle cx="0" cy="-65" r="8" fill="#007bff"/>
+    </g>
+    
+    <!-- Welcome message -->
+    <text x="960" y="600" font-family="Inter, sans-serif" font-size="28" fill="#212529" text-anchor="middle" font-weight="600">
+      Bienvenue sur BotInterface
+    </text>
+    <text x="960" y="640" font-family="Inter, sans-serif" font-size="18" fill="#6c757d" text-anchor="middle">
+      Commencez une conversation avec le bot intelligent
+    </text>
+    <text x="960" y="670" font-family="Inter, sans-serif" font-size="16" fill="#6c757d" text-anchor="middle">
+      Posez votre question ci-dessous pour démarrer
+    </text>
+  </g>
+  
+  <!-- Input Section - Fixed at bottom -->
+  <g id="input-section">
+    <!-- Input container background -->
+    <rect y="960" width="1920" height="120" fill="#ffffff"/>
+    <line x1="0" y1="960" x2="1920" y2="960" stroke="#dee2e6" stroke-width="1"/>
+    
+    <!-- Input field -->
+    <rect x="360" y="990" width="1100" height="60" rx="30" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="400" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#6c757d">
+      Tapez votre message ici...
+    </text>
+    
+    <!-- Send button -->
+    <g id="send-button">
+      <rect x="1490" y="990" width="120" height="60" rx="30" fill="#007bff"/>
+      <text x="1550" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Envoyer
+      </text>
+      <!-- Send icon -->
+      <path d="M 1520,1015 L 1535,1020 L 1520,1025 Z" fill="#ffffff"/>
+    </g>
+  </g>
+  
+  <!-- Version info -->
+  <text x="20" y="1060" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd">
+    v1.0.0
+  </text>
+</svg>

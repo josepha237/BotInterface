@@ -1,0 +1,107 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desktop Landing Page (copied from docs mockups) -->
+  <title>BotInterface - Landing Page</title>
+  <desc>Page d'accueil publique de BotInterface</desc>
+  
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#007bff;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#e3f2fd;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <linearGradient id="button-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0056b3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#007bff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  <rect width="1920" height="1080" fill="url(#hero-gradient)"/>
+  
+  <!-- Navigation Bar -->
+  <g id="navbar">
+    <rect width="1920" height="80" fill="#ffffff" opacity="0.95"/>
+    <line x1="0" y1="80" x2="1920" y2="80" stroke="#e9ecef" stroke-width="1"/>
+    
+    <!-- Logo & Brand -->
+    <g transform="translate(100, 25)">
+      <circle cx="15" cy="15" r="15" fill="#007bff"/>
+      <text x="15" y="20" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
+      <text x="40" y="23" font-family="Inter, sans-serif" font-size="22" fill="#007bff" font-weight="700">
+        BotInterface
+      </text>
+    </g>
+    
+    <!-- CTA Button in navbar -->
+    <g transform="translate(1650, 20)">
+      <rect width="170" height="45" rx="22.5" fill="url(#button-gradient)"/>
+      <text x="85" y="30" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Commencer →
+      </text>
+    </g>
+  </g>
+  
+  <!-- Hero Section -->
+  <g id="hero-section" transform="translate(0, 180)">
+    <!-- Left Content -->
+    <g transform="translate(200, 120)">
+      <!-- Main Headline -->
+      <text x="0" y="0" font-family="Inter, sans-serif" font-size="56" fill="#212529" font-weight="800">
+        Votre assistant
+      </text>
+      <text x="0" y="70" font-family="Inter, sans-serif" font-size="56" fill="#007bff" font-weight="800">
+        Intelligent, simple
+      </text>
+      
+      <!-- Subtitle -->
+      <text x="0" y="140" font-family="Inter, sans-serif" font-size="20" fill="#6c757d" font-weight="400">
+        Intégrez rapidement un chatbot à votre application Flask. Testez-le ici, gratuitement.
+      </text>
+      
+      <!-- CTA Buttons -->
+      <g transform="translate(0, 200)">
+        <!-- Primary CTA -->
+        <rect width="220" height="60" rx="30" fill="url(#button-gradient)"/>
+        <text x="110" y="39" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="600">
+          🚀 Essayer gratuitement
+        </text>
+        
+        <!-- Secondary CTA -->
+        <g transform="translate(250, 0)">
+          <rect width="200" height="60" rx="30" fill="none" stroke="#007bff" stroke-width="2"/>
+          <text x="100" y="39" font-family="Inter, sans-serif" font-size="18" fill="#007bff" text-anchor="middle" font-weight="600">
+            📖 Documentation
+          </text>
+        </g>
+      </g>
+      
+      <!-- Trust Indicators -->
+      <g transform="translate(0, 290)">
+        <text x="0" y="0" font-family="Inter, sans-serif" font-size="14" fill="#28a745" font-weight="600">✓ Gratuit</text>
+        <text x="120" y="0" font-family="Inter, sans-serif" font-size="14" fill="#28a745" font-weight="600">✓ Open Source</text>
+        <text x="260" y="0" font-family="Inter, sans-serif" font-size="14" fill="#28a745" font-weight="600">✓ Sécurisé</text>
+      </g>
+    </g>
+    
+    <!-- Right Content - Mockup Preview -->
+    <g transform="translate(1050, 50)">
+      <!-- Use simpler device frame for preview -->
+      <rect x="0" y="0" width="600" height="420" rx="20" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+      <rect x="0" y="0" width="600" height="60" rx="20" fill="#007bff"/>
+      <text x="300" y="42" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="600">🤖 BotInterface</text>
+      
+      <!-- placeholder for chat preview content -->
+      <g transform="translate(30, 80)">
+        <rect x="0" y="0" width="540" height="300" rx="12" fill="#f8f9fa"/>
+        <text x="270" y="150" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">Aperçu de l'interface</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Features Section Preview -->
+  <g id="features-preview" transform="translate(0, 880)">
+    <rect y="0" width="1920" height="1" fill="#e9ecef"/>
+    <!-- Feature icons and texts omitted for brevity -->
+  </g>
+</svg>

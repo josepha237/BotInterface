@@ -1,0 +1,156 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Desktop Home Page - With Chat Conversation -->
+  <title>BotInterface - Avec conversation</title>
+  <desc>Mockup desktop de la page avec historique de conversation</desc>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f8f9fa"/>
+  
+  <!-- Header Section - 70px height -->
+  <g id="header">
+    <rect width="1920" height="70" fill="#007bff"/>
+    
+    <!-- Logo -->
+    <circle cx="40" cy="35" r="20" fill="#ffffff" opacity="0.9"/>
+    <text x="40" y="40" font-family="Inter, sans-serif" font-size="16" fill="#007bff" text-anchor="middle" font-weight="bold">B</text>
+    
+    <!-- Title -->
+    <text x="80" y="44" font-family="Inter, sans-serif" font-size="24" fill="#ffffff" font-weight="600">
+      🤖 BotInterface
+    </text>
+    
+    <!-- New chat button -->
+    <g id="new-chat-button">
+      <rect x="1650" y="20" width="140" height="40" rx="20" fill="#ffffff" opacity="0.2"/>
+      <text x="1720" y="45" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600">
+        + Nouveau chat
+      </text>
+    </g>
+    
+    <!-- Settings icon -->
+    <g transform="translate(1850, 25)">
+      <circle cx="15" cy="15" r="15" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="15" cy="15" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <line x1="15" y1="5" x2="15" y2="8" stroke="#ffffff" stroke-width="2"/>
+      <line x1="15" y1="22" x2="15" y2="25" stroke="#ffffff" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Chat Messages Area -->
+  <g id="chat-area">
+    <!-- Message 1 - User -->
+    <g id="message-user-1" transform="translate(0, 100)">
+      <rect x="1100" y="0" width="700" height="80" rx="12" fill="#e3f2fd"/>
+      <text x="1120" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+        Bonjour ! Comment fonctionnez-vous ?
+      </text>
+      <text x="1780" y="65" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">
+        Vous · 10:23
+      </text>
+    </g>
+    
+    <!-- Message 2 - Bot -->
+    <g id="message-bot-1" transform="translate(0, 200)">
+      <!-- Bot avatar -->
+      <circle cx="140" cy="40" r="25" fill="#007bff"/>
+      <text x="140" y="47" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">
+        B
+      </text>
+      
+      <rect x="180" y="0" width="850" height="120" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+      <text x="200" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+        Bonjour ! Je suis BotInterface, un assistant intelligent conçu pour
+      </text>
+      <text x="200" y="55" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+        vous aider. Je peux répondre à vos questions, vous fournir des
+      </text>
+      <text x="200" y="80" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+        informations et discuter de divers sujets. Comment puis-je vous aider ?
+      </text>
+      <text x="200" y="105" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Bot · 10:23
+      </text>
+    </g>
+    
+    <!-- Message 3 - User -->
+    <g id="message-user-2" transform="translate(0, 350)">
+      <rect x="1000" y="0" width="800" height="100" rx="12" fill="#e3f2fd"/>
+      <text x="1020" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+        Pouvez-vous m'aider à comprendre comment intégrer
+      </text>
+      <text x="1020" y="55" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+        une API dans mon projet Flask ?
+      </text>
+      <text x="1780" y="85" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">
+        Vous · 10:24
+      </text>
+    </g>
+    
+    <!-- Message 4 - Bot -->
+    <g id="message-bot-2" transform="translate(0, 480)">
+      <!-- Bot avatar -->
+      <circle cx="140" cy="40" r="25" fill="#007bff"/>
+      <text x="140" y="47" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">
+        B
+      </text>
+      
+      <rect x="180" y="0" width="900" height="180" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+      <text x="200" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+        Bien sûr ! Pour intégrer une API dans Flask, vous pouvez utiliser la
+      </text>
+      <text x="200" y="55" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+        bibliothèque 'requests'. Voici les étapes principales :
+      </text>
+      <text x="200" y="85" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="600">
+        1. Installer requests : pip install requests
+      </text>
+      <text x="200" y="110" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="600">
+        2. Importer dans votre app : import requests
+      </text>
+      <text x="200" y="135" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="600">
+        3. Faire des appels API : response = requests.get(url)
+      </text>
+      <text x="200" y="165" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Bot · 10:24
+      </text>
+    </g>
+    
+    <!-- Message 5 - User -->
+    <g id="message-user-3" transform="translate(0, 690)">
+      <rect x="1200" y="0" width="600" height="80" rx="12" fill="#e3f2fd"/>
+      <text x="1220" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+        Merci beaucoup ! C'est très clair.
+      </text>
+      <text x="1780" y="65" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">
+        Vous · 10:25
+      </text>
+    </g>
+  </g>
+  
+  <!-- Input Section - Fixed at bottom -->
+  <g id="input-section">
+    <!-- Input container background -->
+    <rect y="960" width="1920" height="120" fill="#ffffff"/>
+    <line x1="0" y1="960" x2="1920" y2="960" stroke="#dee2e6" stroke-width="2"/>
+    
+    <!-- Input field - focused state -->
+    <rect x="360" y="990" width="1100" height="60" rx="30" fill="#ffffff" stroke="#007bff" stroke-width="2"/>
+    <text x="400" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#212529">
+      Avez-vous d'autres conseils ?
+    </text>
+    
+    <!-- Send button - active -->
+    <g id="send-button">
+      <rect x="1490" y="990" width="120" height="60" rx="30" fill="#007bff"/>
+      <text x="1550" y="1026" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Envoyer
+      </text>
+      <!-- Send icon -->
+      <polygon points="1515,1015 1530,1020 1515,1025" fill="#ffffff"/>
+    </g>
+  </g>
+  
+  <!-- Scroll indicator -->
+  <rect x="1900" y="400" width="8" height="400" rx="4" fill="#e9ecef"/>
+  <rect x="1900" y="400" width="8" height="150" rx="4" fill="#007bff" opacity="0.5"/>
+</svg>

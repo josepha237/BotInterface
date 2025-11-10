@@ -1,51 +1,75 @@
-from flask import Flask, render_template, send_from_directory, request, jsonify
-import requests
+"""
+BotInterface - Flask Backend Application
+Serves the chat interface and handles bot API communication
+"""
+
 import os
+from flask import Flask, jsonify
+from dotenv import load_dotenv
 
-app = Flask(__name__, template_folder="pages")
+from database.db import init_db, close_db
+from route.page_routes import page_bp
+from route.chat_routes import chat_bp
+from route.ai_routes import ai_bp
 
-# === ROUTES FRONTEND ===
+load_dotenv()
 
-@app.route('/')
-def home():
-    return render_template('landing/landing.html')
+app = Flask(__name__, 
+            static_folder='stactic',
+            static_url_path='/static',
+            template_folder='templates')
 
-@app.route('/chatbot')
-def chatbot():
-    return render_template('chatbot/chatbot.html')
+# Secret key for session management
+app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
+
+# Init SQLite database
+app.config["DB_PATH"] = os.environ.get(
+    "SQLITE_DB_PATH",
+    os.path.join(os.getcwd(), "database", "botinterface.db"),
+)
+
+# Preinscription URL (Université de Douala)
+app.config["PREINSCRIPTION_URL"] = os.environ.get(
+    "PREINSCRIPTION_URL",
+    "http://www.systhag-online.cm:8080/SYSTHAG-ONLINE/faces/etudiants/preInscription.xhtml",
+)
+init_db(app)
+app.teardown_appcontext(close_db)
+
+# Register blueprints
+app.register_blueprint(page_bp)
+app.register_blueprint(chat_bp)
+app.register_blueprint(ai_bp)
 
 
-# === SERVIR LES FICHIERS CSS/JS SPÉCIFIQUES ===
-@app.route('/pages/<path:filename>')
-def serve_page_files(filename):
-    return send_from_directory('pages', filename)
+@app.context_processor
+def inject_globals():
+    """Inject global variables into all templates."""
+    return {
+        "PREINSCRIPTION_URL": app.config.get("PREINSCRIPTION_URL"),
+    }
 
-"""
-# === API POUR COMMUNIQUER AVEC RASA ===
-@app.route('/get_response', methods=['POST'])
-def get_response():
-    user_message = request.json.get("message")
-    rasa_url = "http://localhost:5005/webhooks/rest/webhook"  # URL du serveur Rasa
 
-    try:
-        response = requests.post(rasa_url, json={"message": user_message})
-        data = response.json()
+@app.errorhandler(404)
+def not_found(error):
+    """Handle 404 errors"""
+    return jsonify({'error': 'Route non trouvée'}), 404
 
-        if data and "text" in data[0]:
-            return jsonify({"response": data[0]["text"]})
-        else:
-            return jsonify({"response": "Désolé, je n’ai pas compris 😅"})
-    except Exception as e:
-        return jsonify({"response": f"Erreur de connexion au serveur Rasa : {e}"})
 
-"""
-@app.route('/get_response', methods=['POST'])
-def get_response():
-    user_message = request.json.get("message")
-    # Réponse factice pour tester l'interface
-    fake_reply = f"Tu as dit : {user_message} 😄 (Rasa non connecté)"
-    return jsonify({"response": fake_reply})
+@app.errorhandler(500)
+def internal_error(error):
+    """Handle 500 errors"""
+    print(f'[ERROR] Internal error: {error}')
+    return jsonify({'error': 'Erreur serveur interne'}), 500
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Development server
+    debug_mode = os.environ.get('FLASK_DEBUG', 'True').lower() == 'true'
+    port = int(os.environ.get('PORT', '5000'))
+    
+    app.run(
+        host='0.0.0.0',
+        port=port,
+        debug=debug_mode
+    )

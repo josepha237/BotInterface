@@ -1,0 +1,31 @@
+%% Chat message roundtrip sequence
+sequenceDiagram
+	autonumber
+	actor U as User
+	participant B as Browser (index.html)
+	participant F as Flask Backend
+	participant D as Database
+	participant A as Bot API
+
+	U->>B: Type message + Press Send
+	B->>F: POST /api/chat { text }
+	F->>D: Save user message
+	activate F
+	F->>A: generateReply(text)
+	activate A
+	A-->>F: 200 OK { reply }
+	deactivate A
+	F->>D: Save bot reply
+	F-->>B: 200 OK { reply }
+	deactivate F
+	B->>B: Render reply in chat
+
+	Note over B: Show loading spinner while awaiting response
+
+	alt Failure from Bot API
+		F-->>B: 502/500 { error }
+		B->>B: Show error state + retry
+	else Network timeout
+		B--x F: Request timeout
+		B->>B: Offer retry option
+	end

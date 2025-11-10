@@ -1,0 +1,17 @@
+%% Use Case diagram approximation using flowchart
+flowchart LR
+	user[(User)]
+	admin[(Admin)]
+
+	send([Send Message])
+	view([View History])
+	retry([Retry Failed Message])
+	configure([Configure Settings])
+	moderate([Moderate Conversations])
+
+	user --> send
+	user --> view
+	user --> retry
+	user --> configure
+	admin --> view
+	admin --> moderate

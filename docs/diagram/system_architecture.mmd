@@ -1,0 +1,45 @@
+%% System Architecture for BotInterface
+%% Simplified labels for compatibility
+flowchart LR
+	%% Frontend
+	subgraph Browser
+		direction TB
+		UI[index.html]
+		CSS[styles.css]
+		JS[index.js]
+	end
+
+	%% Backend
+	subgraph Flask
+		direction TB
+		Routes["Routes: GET /, POST /api/chat, GET /api/history"]
+		Service[Chat Service]
+	end
+
+	%% External dependency
+	subgraph External
+		BotAPI[(Bot Provider API)]
+	end
+
+	%% Optional storage (in-memory or Redis)
+	subgraph Storage
+		Sessions[(Sessions)]
+	end
+
+	%% Static asset relations
+	Routes --> UI
+	Routes --> CSS
+	Routes --> JS
+
+	%% Browser runtime
+	UI --> JS
+	JS -->|fetch| Routes
+	Routes --> Service
+	Service --> BotAPI
+	BotAPI --> Service
+	Service --> Routes
+	Routes --> JS
+	JS --> UI
+
+	%% Sessions linkage
+	Routes <---> Sessions

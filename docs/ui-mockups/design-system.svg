@@ -1,0 +1,350 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Components Library -->
+  <title>BotInterface - Bibliothèque de composants</title>
+  <desc>Collection des composants UI réutilisables</desc>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="960" y="60" font-family="Inter, sans-serif" font-size="32" fill="#212529" text-anchor="middle" font-weight="700">
+    Bibliothèque de Composants - BotInterface
+  </text>
+  
+  <!-- Section 1: Buttons -->
+  <g id="buttons-section" transform="translate(100, 120)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      Boutons
+    </text>
+    
+    <!-- Primary Button -->
+    <g transform="translate(0, 40)">
+      <rect width="160" height="50" rx="25" fill="#007bff"/>
+      <text x="80" y="32" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Primary
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        État normal
+      </text>
+    </g>
+    
+    <!-- Primary Button Hover -->
+    <g transform="translate(200, 40)">
+      <rect width="160" height="50" rx="25" fill="#0056b3"/>
+      <text x="80" y="32" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Primary
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Hover
+      </text>
+    </g>
+    
+    <!-- Secondary Button -->
+    <g transform="translate(400, 40)">
+      <rect width="160" height="50" rx="25" fill="#6c757d"/>
+      <text x="80" y="32" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Secondary
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        État normal
+      </text>
+    </g>
+    
+    <!-- Outline Button -->
+    <g transform="translate(600, 40)">
+      <rect width="160" height="50" rx="25" fill="none" stroke="#007bff" stroke-width="2"/>
+      <text x="80" y="32" font-family="Inter, sans-serif" font-size="16" fill="#007bff" text-anchor="middle" font-weight="600">
+        Outline
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        État normal
+      </text>
+    </g>
+    
+    <!-- Disabled Button -->
+    <g transform="translate(800, 40)">
+      <rect width="160" height="50" rx="25" fill="#e9ecef"/>
+      <text x="80" y="32" font-family="Inter, sans-serif" font-size="16" fill="#adb5bd" text-anchor="middle" font-weight="600">
+        Disabled
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Désactivé
+      </text>
+    </g>
+    
+    <!-- Small Button -->
+    <g transform="translate(1000, 45)">
+      <rect width="120" height="40" rx="20" fill="#007bff"/>
+      <text x="60" y="26" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600">
+        Small
+      </text>
+      <text x="0" y="65" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Petit
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 2: Input Fields -->
+  <g id="inputs-section" transform="translate(100, 320)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      Champs de saisie
+    </text>
+    
+    <!-- Normal Input -->
+    <g transform="translate(0, 40)">
+      <rect width="350" height="50" rx="25" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+      <text x="20" y="32" font-family="Inter, sans-serif" font-size="15" fill="#6c757d">
+        Tapez votre message...
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        État normal
+      </text>
+    </g>
+    
+    <!-- Focused Input -->
+    <g transform="translate(400, 40)">
+      <rect width="350" height="50" rx="25" fill="#ffffff" stroke="#007bff" stroke-width="2"/>
+      <text x="20" y="32" font-family="Inter, sans-serif" font-size="15" fill="#212529">
+        Texte saisi par l'utilisateur
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Focus
+      </text>
+    </g>
+    
+    <!-- Error Input -->
+    <g transform="translate(800, 40)">
+      <rect width="350" height="50" rx="25" fill="#fff5f5" stroke="#dc3545" stroke-width="2"/>
+      <text x="20" y="32" font-family="Inter, sans-serif" font-size="15" fill="#dc3545">
+        Message invalide
+      </text>
+      <text x="0" y="75" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Erreur
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 3: Message Cards -->
+  <g id="message-cards-section" transform="translate(100, 520)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      Cartes de messages
+    </text>
+    
+    <!-- User Message Card -->
+    <g transform="translate(600, 40)">
+      <rect width="450" height="90" rx="12" fill="#e3f2fd"/>
+      <text x="15" y="30" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="500">
+        Message de l'utilisateur
+      </text>
+      <text x="15" y="52" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="500">
+        Affiché à droite de l'écran avec fond bleu clair
+      </text>
+      <text x="430" y="75" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="end">
+        Vous · 10:30
+      </text>
+      <text x="600" y="120" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Message utilisateur
+      </text>
+    </g>
+    
+    <!-- Bot Message Card -->
+    <g transform="translate(0, 170)">
+      <!-- Bot avatar -->
+      <circle cx="30" cy="40" r="22" fill="#007bff"/>
+      <text x="30" y="47" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">
+        B
+      </text>
+      
+      <rect x="70" y="0" width="550" height="110" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+      <text x="85" y="30" font-family="Inter, sans-serif" font-size="15" fill="#212529">
+        Message du bot
+      </text>
+      <text x="85" y="52" font-family="Inter, sans-serif" font-size="15" fill="#212529">
+        Affiché à gauche avec avatar du bot et fond blanc avec
+      </text>
+      <text x="85" y="74" font-family="Inter, sans-serif" font-size="15" fill="#212529">
+        bordure grise. Peut contenir plusieurs lignes de texte.
+      </text>
+      <text x="85" y="98" font-family="Inter, sans-serif" font-size="11" fill="#6c757d">
+        Bot · 10:30
+      </text>
+      <text x="200" y="140" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+        Message bot
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 4: Icons -->
+  <g id="icons-section" transform="translate(1200, 520)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      Icônes
+    </text>
+    
+    <!-- Send Icon -->
+    <g transform="translate(30, 60)">
+      <circle cx="0" cy="0" r="30" fill="#007bff" opacity="0.1"/>
+      <polygon points="-10,-5 5,0 -10,5" fill="#007bff"/>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Envoyer
+      </text>
+    </g>
+    
+    <!-- Settings Icon -->
+    <g transform="translate(120, 60)">
+      <circle cx="0" cy="0" r="30" fill="#6c757d" opacity="0.1"/>
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#6c757d" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="#6c757d" stroke-width="2"/>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Réglages
+      </text>
+    </g>
+    
+    <!-- Menu Icon -->
+    <g transform="translate(210, 60)">
+      <circle cx="0" cy="0" r="30" fill="#212529" opacity="0.1"/>
+      <rect x="-12" y="-10" width="24" height="3" rx="1.5" fill="#212529"/>
+      <rect x="-12" y="-2" width="24" height="3" rx="1.5" fill="#212529"/>
+      <rect x="-12" y="6" width="24" height="3" rx="1.5" fill="#212529"/>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Menu
+      </text>
+    </g>
+    
+    <!-- Error Icon -->
+    <g transform="translate(300, 60)">
+      <circle cx="0" cy="0" r="30" fill="#dc3545" opacity="0.1"/>
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#dc3545" stroke-width="2"/>
+      <line x1="0" y1="-8" x2="0" y2="2" stroke="#dc3545" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="0" cy="8" r="2" fill="#dc3545"/>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Erreur
+      </text>
+    </g>
+    
+    <!-- Success Icon -->
+    <g transform="translate(390, 60)">
+      <circle cx="0" cy="0" r="30" fill="#28a745" opacity="0.1"/>
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#28a745" stroke-width="2"/>
+      <polyline points="-7,0 -2,5 7,-5" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="0" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Succès
+      </text>
+    </g>
+  </g>
+  
+  <!-- Section 5: Loading States -->
+  <g id="loading-section" transform="translate(1200, 720)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      États de chargement
+    </text>
+    
+    <!-- Typing dots -->
+    <g transform="translate(60, 60)">
+      <circle cx="-25" cy="0" r="5" fill="#007bff" opacity="0.7">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0s"/>
+      </circle>
+      <circle cx="0" cy="0" r="5" fill="#007bff" opacity="0.7">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0.2s"/>
+      </circle>
+      <circle cx="25" cy="0" r="5" fill="#007bff" opacity="0.7">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.4s" repeatCount="indefinite" begin="0.4s"/>
+      </circle>
+      <text x="0" y="35" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        En train d'écrire
+      </text>
+    </g>
+    
+    <!-- Spinner -->
+    <g transform="translate(200, 60)">
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#e9ecef" stroke-width="3"/>
+      <circle cx="0" cy="0" r="18" fill="none" stroke="#007bff" stroke-width="3" stroke-dasharray="80" stroke-dashoffset="60">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="45" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+        Chargement
+      </text>
+    </g>
+  </g>
+  
+  <!-- Color Palette -->
+  <g id="color-palette" transform="translate(100, 880)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-size="24" fill="#007bff" font-weight="600">
+      Palette de couleurs
+    </text>
+    
+    <g transform="translate(0, 30)">
+      <rect width="100" height="80" fill="#007bff"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Primary
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #007bff
+      </text>
+    </g>
+    
+    <g transform="translate(120, 30)">
+      <rect width="100" height="80" fill="#6c757d"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Secondary
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #6c757d
+      </text>
+    </g>
+    
+    <g transform="translate(240, 30)">
+      <rect width="100" height="80" fill="#28a745"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Success
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #28a745
+      </text>
+    </g>
+    
+    <g transform="translate(360, 30)">
+      <rect width="100" height="80" fill="#dc3545"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Error
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #dc3545
+      </text>
+    </g>
+    
+    <g transform="translate(480, 30)">
+      <rect width="100" height="80" fill="#ffc107"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Warning
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #ffc107
+      </text>
+    </g>
+    
+    <g transform="translate(600, 30)">
+      <rect width="100" height="80" fill="#e3f2fd"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Light Blue
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #e3f2fd
+      </text>
+    </g>
+    
+    <g transform="translate(720, 30)">
+      <rect width="100" height="80" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+      <text x="50" y="100" font-family="Inter, sans-serif" font-size="11" fill="#212529" text-anchor="middle">
+        Background
+      </text>
+      <text x="50" y="115" font-family="Fira Code, monospace" font-size="10" fill="#6c757d" text-anchor="middle">
+        #f8f9fa
+      </text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <text x="960" y="1060" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">
+    BotInterface Design System v1.0 - Novembre 2025
+  </text>
+</svg>

@@ -1,0 +1,28 @@
+%% Entity Relationship Diagram for chat data
+erDiagram
+	USER {
+		int id PK
+		string email
+		string display_name
+		datetime created_at
+	}
+
+	SESSION {
+		int id PK
+		int user_id FK
+		string status "active|closed"
+		datetime started_at
+		datetime last_activity_at
+	}
+
+	MESSAGE {
+		int id PK
+		int session_id FK
+		string role "user|assistant|system"
+		text content
+		datetime created_at
+		string error "nullable"
+	}
+
+	USER ||--o{ SESSION : has
+	SESSION ||--o{ MESSAGE : contains
