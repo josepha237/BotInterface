@@ -1,17 +1,63 @@
-%% Use Case diagram approximation using flowchart
-flowchart LR
-	user[(User)]
+%% Use Case diagram with authentication
+flowchart TB
+	student[(Student)]
 	admin[(Admin)]
+	guest[(Guest/Visitor)]
 
-	send([Send Message])
-	view([View History])
-	retry([Retry Failed Message])
-	configure([Configure Settings])
-	moderate([Moderate Conversations])
+	subgraph Authentication
+		register([Register Account])
+		login([Login])
+		logout([Logout])
+		reset([Reset Password])
+		verify([Verify Email])
+	end
 
-	user --> send
-	user --> view
-	user --> retry
-	user --> configure
+	subgraph ChatFeatures[Chat Features]
+		send([Send Message])
+		view([View History])
+		retry([Retry Failed Message])
+		newchat([Start New Chat])
+		export([Export Conversation])
+	end
+
+	subgraph UserManagement[User Management]
+		profile([Edit Profile])
+		settings([Configure Settings])
+		viewstats([View Usage Stats])
+	end
+
+	subgraph AdminFeatures[Admin Features]
+		moderate([Moderate Conversations])
+		viewusers([View All Users])
+		analytics([View Analytics])
+		managebot([Manage Bot Config])
+	end
+
+	%% Guest interactions
+	guest --> register
+	guest --> login
+
+	%% Student interactions
+	student --> login
+	student --> logout
+	student --> send
+	student --> view
+	student --> retry
+	student --> newchat
+	student --> export
+	student --> profile
+	student --> settings
+	student --> viewstats
+	student --> reset
+	student --> verify
+
+	%% Admin interactions
+	admin --> login
+	admin --> logout
+	admin --> send
 	admin --> view
 	admin --> moderate
+	admin --> viewusers
+	admin --> analytics
+	admin --> managebot
+	admin --> settings

@@ -6,23 +6,41 @@
   <!-- Background -->
   <rect width="1920" height="1080" fill="#f8f9fa"/>
   
-  <!-- Header Section -->
+  <!-- Header Section with gradient -->
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
+    </linearGradient>
+  </defs>
   <g id="header">
-    <rect width="1920" height="70" fill="#007bff"/>
+    <rect width="1920" height="70" fill="url(#headerGradient)"/>
     
-    <!-- Logo -->
-    <circle cx="40" cy="35" r="20" fill="#ffffff" opacity="0.9"/>
-    <text x="40" y="40" font-family="Inter, sans-serif" font-size="16" fill="#007bff" text-anchor="middle" font-weight="bold">B</text>
+    <!-- Logo Bot4Univ -->
+    <g transform="translate(40, 35)">
+      <circle cx="0" cy="0" r="20" fill="#ffc600" opacity="0.9"/>
+      <circle cx="-5" cy="-3" r="2.5" fill="#07294d"/>
+      <circle cx="5" cy="-3" r="2.5" fill="#07294d"/>
+      <path d="M -5 3 Q 0 7 5 3" stroke="#07294d" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </g>
     
     <!-- Title -->
-    <text x="80" y="44" font-family="Inter, sans-serif" font-size="24" fill="#ffffff" font-weight="600">
-      🤖 BotInterface
+    <text x="80" y="44" font-family="Inter, sans-serif" font-size="24" fill="#ffc600" font-weight="600">
+      🤖 Bot4Univ
     </text>
+    
+    <!-- Logout button -->
+    <g id="logout-button" transform="translate(1650, 20)">
+      <rect width="120" height="35" rx="17.5" fill="none" stroke="#ffc600" stroke-width="2"/>
+      <text x="60" y="23" font-family="Inter, sans-serif" font-size="13" fill="#ffc600" text-anchor="middle" font-weight="600">
+        🚪 Déconnexion
+      </text>
+    </g>
     
     <!-- Settings icon -->
     <g transform="translate(1850, 25)">
-      <circle cx="15" cy="15" r="15" fill="none" stroke="#ffffff" stroke-width="2"/>
-      <circle cx="15" cy="15" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="15" cy="15" r="15" fill="none" stroke="#ffc600" stroke-width="2"/>
+      <circle cx="15" cy="15" r="5" fill="none" stroke="#ffc600" stroke-width="2"/>
     </g>
   </g>
   
@@ -30,8 +48,8 @@
   <g id="chat-area">
     <!-- User message -->
     <g id="message-user-1" transform="translate(0, 100)">
-      <rect x="1100" y="0" width="700" height="80" rx="12" fill="#e3f2fd"/>
-      <text x="1120" y="30" font-family="Inter, sans-serif" font-size="16" fill="#212529" font-weight="500">
+      <rect x="1100" y="0" width="700" height="80" rx="12" fill="#fff9e6"/>
+      <text x="1120" y="30" font-family="Inter, sans-serif" font-size="16" fill="#07294d" font-weight="500">
         Pouvez-vous m'aider avec ce problème ?
       </text>
       <text x="1780" y="65" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">

@@ -21,19 +21,12 @@
             </div>
             
             <div class="header-actions">
-                <button class="btn-new-chat" id="newChatBtn">
-                    <span class="plus-icon">+</span> Nouveau chat
-                </button>
-                <button class="btn-settings" id="settingsBtn" aria-label="Paramètres">
-                    <svg width="30" height="30" viewBox="0 0 30 30">
-                        <circle cx="15" cy="15" r="13" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="15" cy="15" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="15" y1="5" x2="15" y2="8" stroke="currentColor" stroke-width="2"/>
-                        <line x1="15" y1="22" x2="15" y2="25" stroke="currentColor" stroke-width="2"/>
-                        <line x1="5" y1="15" x2="8" y2="15" stroke="currentColor" stroke-width="2"/>
-                        <line x1="22" y1="15" x2="25" y2="15" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </button>
+                    <button class="btn-new-chat" id="newChatBtn">
+                        <span class="plus-icon">+</span> Nouveau chat
+                    </button>
+                    <button class="btn-logout" id="logoutBtn" aria-label="Déconnexion">
+                        <span class="logout-icon">🚪</span> Déconnexion
+                    </button>
             </div>
         </div>
     </header>
@@ -126,5 +119,31 @@
     </footer>
 
     <script src="/static/js/index.js"></script>
+        <script>
+            // Logout functionality
+            document.getElementById('logoutBtn')?.addEventListener('click', async function() {
+                if (!confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+                    return;
+                }
+            
+                try {
+                    const response = await fetch('/api/auth/logout', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                
+                    if (response.ok) {
+                        window.location.href = '/';
+                    } else {
+                        alert('Erreur lors de la déconnexion');
+                    }
+                } catch (error) {
+                    console.error('Logout error:', error);
+                    alert('Erreur de connexion au serveur');
+                }
+            });
+        </script>
 </body>
 </html>

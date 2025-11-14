@@ -1,0 +1,116 @@
+<svg width="375" height="812" viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="375" height="812" fill="#f8f9fa"/>
+  
+  <!-- Header with Logo and gradient -->
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="375" height="180" fill="url(#headerGradient)"/>
+  
+  <!-- Bot4Univ Logo -->
+  <g transform="translate(187.5, 70)">
+    <circle cx="0" cy="0" r="35" fill="#ffffff" opacity="0.2"/>
+    <circle cx="0" cy="0" r="28" fill="#ffffff"/>
+    <circle cx="-9" cy="-5" r="3.5" fill="#ffc600"/>
+    <circle cx="9" cy="-5" r="3.5" fill="#ffc600"/>
+    <path d="M -11 7 Q 0 14 11 7" stroke="#ffc600" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="-7" y="-28" width="14" height="9" rx="2" fill="#ffffff"/>
+    <circle cx="0" cy="-32" r="2.5" fill="#ffc600"/>
+  </g>
+  
+  <text x="187.5" y="130" font-family="Inter, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Bienvenue !
+  </text>
+  
+  <text x="187.5" y="158" font-family="Inter, sans-serif" font-size="13" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Créez votre compte Bot4Univ
+  </text>
+  
+  <!-- Scrollable Form Container -->
+  <rect x="20" y="210" width="335" height="560" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1.5"/>
+  
+  <!-- Title -->
+  <text x="187.5" y="245" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#212529" text-anchor="middle">
+    Créer un compte
+  </text>
+  
+  <!-- Full Name Field -->
+  <text x="40" y="285" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#212529">
+    Nom complet
+  </text>
+  <rect x="40" y="292" width="295" height="42" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+  <text x="52" y="317" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+    Jean Dupont
+  </text>
+  
+  <!-- Email Field -->
+  <text x="40" y="360" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#212529">
+    Email universitaire
+  </text>
+  <rect x="40" y="367" width="295" height="42" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+  <text x="52" y="392" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+    votre.email@univ-douala.cm
+  </text>
+  
+  <!-- Student ID Field -->
+  <text x="40" y="435" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#212529">
+    Matricule (optionnel)
+  </text>
+  <rect x="40" y="442" width="295" height="42" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+  <text x="52" y="467" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+    20L1234
+  </text>
+  
+  <!-- Password Field -->
+  <text x="40" y="510" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#212529">
+    Mot de passe
+  </text>
+  <rect x="40" y="517" width="295" height="42" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+  <text x="52" y="542" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+    ••••••••
+  </text>
+  
+  <!-- Password Strength -->
+  <rect x="40" y="565" width="98" height="3" rx="1.5" fill="#28a745"/>
+  <rect x="140" y="565" width="98" height="3" rx="1.5" fill="#ffc107"/>
+  <rect x="240" y="565" width="95" height="3" rx="1.5" fill="#e9ecef"/>
+  <text x="40" y="581" font-family="Inter, sans-serif" font-size="11" fill="#28a745">
+    Force: Moyenne
+  </text>
+  
+  <!-- Confirm Password Field -->
+  <text x="40" y="608" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#212529">
+    Confirmer mot de passe
+  </text>
+  <rect x="40" y="615" width="295" height="42" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+  <text x="52" y="640" font-family="Inter, sans-serif" font-size="12" fill="#6c757d">
+    ••••••••
+  </text>
+  
+  <!-- Terms Checkbox -->
+  <rect x="40" y="675" width="16" height="16" rx="3" fill="#ffc600" stroke="#ffc600" stroke-width="1.2"/>
+  <path d="M 43 683 L 46 686 L 53 679" stroke="#07294d" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="62" y="687" font-family="Inter, sans-serif" font-size="11" fill="#495057">
+    J'accepte les 
+    <tspan fill="#07294d" style="text-decoration: underline;">conditions</tspan>
+  </text>
+  
+  <!-- Register Button -->
+  <rect x="40" y="710" width="295" height="46" rx="8" fill="#ffc600" style="cursor: pointer;"/>
+  <text x="187.5" y="737" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#07294d" text-anchor="middle">
+    Créer mon compte
+  </text>
+  
+  <!-- Login Link -->
+  <text x="187.5" y="805" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">
+    Déjà un compte ?
+    <tspan fill="#07294d" font-weight="600" style="text-decoration: underline;"> Se connecter</tspan>
+  </text>
+  
+  <!-- Scroll Indicator -->
+  <rect x="185" y="798" width="5" height="5" rx="2.5" fill="#6c757d" opacity="0.3"/>
+</svg>

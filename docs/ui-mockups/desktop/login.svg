@@ -1,0 +1,134 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f8f9fa"/>
+  
+  <!-- Left Panel - Branding with gradient -->
+  <defs>
+    <linearGradient id="brandingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="960" height="1080" fill="url(#brandingGradient)"/>
+  
+  <!-- Bot4Univ Logo and Branding -->
+  <g transform="translate(480, 400)">
+    <!-- Robot Icon -->
+    <circle cx="0" cy="0" r="80" fill="#ffffff" opacity="0.2"/>
+    <circle cx="0" cy="0" r="60" fill="#ffffff"/>
+    <circle cx="-20" cy="-10" r="8" fill="#ffc600"/>
+    <circle cx="20" cy="-10" r="8" fill="#ffc600"/>
+    <path d="M -25 15 Q 0 30 25 15" stroke="#ffc600" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect x="-15" y="-60" width="30" height="20" rx="3" fill="#ffffff"/>
+    <circle cx="0" cy="-70" r="5" fill="#ffc600"/>
+  </g>
+  
+  <text x="480" y="520" font-family="Inter, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Bot4Univ
+  </text>
+  
+  <text x="480" y="565" font-family="Inter, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Assistant Universitaire Intelligent
+  </text>
+  
+  <text x="480" y="620" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" opacity="0.8">
+    Simplifiez vos démarches de préinscription
+  </text>
+  
+  <!-- Features List -->
+  <g transform="translate(280, 680)">
+    <circle cx="0" cy="0" r="6" fill="#ffc600"/>
+    <text x="20" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff">✓ Disponible 24/7</text>
+  </g>
+  <g transform="translate(280, 720)">
+    <circle cx="0" cy="0" r="6" fill="#ffc600"/>
+    <text x="20" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff">✓ Réponses instantanées</text>
+  </g>
+  <g transform="translate(280, 760)">
+    <circle cx="0" cy="0" r="6" fill="#ffc600"/>
+    <text x="20" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff">✓ Sécurisé et confidentiel</text>
+  </g>
+  
+  <!-- Right Panel - Login Form -->
+  <g transform="translate(960, 0)">
+    <!-- Header -->
+    <text x="480" y="200" font-family="Inter, sans-serif" font-size="36" font-weight="bold" fill="#212529" text-anchor="middle">
+      Connexion
+    </text>
+    
+    <text x="480" y="240" font-family="Inter, sans-serif" font-size="16" fill="#6c757d" text-anchor="middle">
+      Accédez à votre assistant personnalisé
+    </text>
+    
+    <!-- Login Form Container -->
+    <rect x="280" y="300" width="400" height="480" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+    
+    <!-- Email Field -->
+    <text x="310" y="350" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Adresse email
+    </text>
+    <rect x="310" y="360" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="389" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      votre.email@univ-douala.cm
+    </text>
+    
+    <!-- Password Field -->
+    <text x="310" y="450" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Mot de passe
+    </text>
+    <rect x="310" y="460" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="489" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      ••••••••
+    </text>
+    
+    <!-- Show/Hide Password Icon -->
+    <g transform="translate(635, 484)">
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#6c757d" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="4" fill="#6c757d"/>
+    </g>
+    
+    <!-- Remember Me Checkbox -->
+    <rect x="310" y="530" width="20" height="20" rx="4" fill="#ffffff" stroke="#ced4da" stroke-width="1.5"/>
+    <text x="340" y="545" font-family="Inter, sans-serif" font-size="14" fill="#495057">
+      Se souvenir de moi
+    </text>
+    
+    <!-- Forgot Password Link -->
+    <text x="650" y="545" font-family="Inter, sans-serif" font-size="14" fill="#07294d" text-anchor="end" style="cursor: pointer; text-decoration: underline;">
+      Mot de passe oublié ?
+    </text>
+    
+    <!-- Login Button -->
+    <rect x="310" y="580" width="340" height="52" rx="8" fill="#ffc600" style="cursor: pointer;"/>
+    <text x="480" y="611" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#07294d" text-anchor="middle">
+      Se connecter
+    </text>
+    
+    <!-- Divider -->
+    <line x1="310" y1="670" x2="445" y2="670" stroke="#dee2e6" stroke-width="1"/>
+    <text x="480" y="676" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">OU</text>
+    <line x1="515" y1="670" x2="650" y2="670" stroke="#dee2e6" stroke-width="1"/>
+    
+    <!-- Google Sign In Button -->
+    <rect x="310" y="700" width="340" height="48" rx="8" fill="#ffffff" stroke="#ced4da" stroke-width="1.5" style="cursor: pointer;"/>
+    <g transform="translate(390, 724)">
+      <!-- Google G Logo -->
+      <path d="M 0 -8 L 0 8 M -8 0 L 8 0" stroke="#4285f4" stroke-width="2" fill="none"/>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#ea4335" stroke-width="2"/>
+    </g>
+    <text x="480" y="729" font-family="Inter, sans-serif" font-size="14" fill="#212529" text-anchor="middle">
+      Continuer avec Google
+    </text>
+    
+    <!-- Sign Up Link -->
+    <text x="480" y="820" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">
+      Pas encore de compte ?
+      <tspan fill="#07294d" font-weight="600" style="cursor: pointer; text-decoration: underline;"> Créer un compte</tspan>
+    </text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="960" y="1040" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">
+    © 2025 Bot4Univ - Groupe 19 | Université de Douala
+  </text>
+</svg>
