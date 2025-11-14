@@ -23,9 +23,8 @@ def login_required(f):
 
 
 def validate_email(email):
-    """Validate university email format"""
-    pattern = r'^[a-zA-Z0-9._%+-]+@(univ-douala\.cm|student\.univ-douala\.cm)$'
-    return re.match(pattern, email) is not None
+    """Accept any non-empty email input (no domain restriction)."""
+    return bool(email)
 
 
 def validate_password(password):
@@ -85,7 +84,7 @@ def register():
         
         # Validate email format
         if not validate_email(email):
-            return jsonify({'error': 'Adresse email universitaire invalide'}), 400
+            return jsonify({'error': 'Adresse email invalide'}), 400
         
         # Validate password strength
         is_valid, message = validate_password(password)
@@ -169,7 +168,7 @@ def forgot_password():
             return jsonify({'error': 'Email requis'}), 400
         
         if not validate_email(email):
-            return jsonify({'error': 'Adresse email universitaire invalide'}), 400
+            return jsonify({'error': 'Adresse email invalide'}), 400
         
         # TODO: Check if email exists in database
         # TODO: Generate reset token

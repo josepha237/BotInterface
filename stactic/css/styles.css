@@ -1525,9 +1525,12 @@ body.menu-open {
     background: var(--bg-main);
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    /* Align content to the top so the page start is always reachable */
+    align-items: flex-start;
     justify-content: center;
-    padding: 20px;
+    /* Extra top padding to avoid any overlap and improve accessibility */
+    padding: 40px 20px 20px;
+    overflow-y: auto; /* allow page scrolling */
 }
 
 .auth-container {
@@ -1535,11 +1538,11 @@ body.menu-open {
     grid-template-columns: 1fr 1fr;
     width: 100%;
     max-width: 1920px;
-    height: 1080px;
-    max-height: 90vh;
+    /* Remove fixed height to allow content to extend and page to scroll */
+    min-height: 100%;
     background: var(--bg-white);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden; /* inner panels manage their own scroll if needed */
 }
 
 /* Left Panel - Branding */
