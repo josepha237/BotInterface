@@ -1,0 +1,148 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="#f8f9fa"/>
+  
+  <!-- Left Panel - Branding with gradient -->
+  <defs>
+    <linearGradient id="brandingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="960" height="1080" fill="url(#brandingGradient)"/>
+  
+  <!-- Bot4Univ Logo and Branding -->
+  <g transform="translate(480, 350)">
+    <!-- Robot Icon -->
+    <circle cx="0" cy="0" r="80" fill="#ffffff" opacity="0.2"/>
+    <circle cx="0" cy="0" r="60" fill="#ffffff"/>
+    <circle cx="-20" cy="-10" r="8" fill="#ffc600"/>
+    <circle cx="20" cy="-10" r="8" fill="#ffc600"/>
+    <path d="M -25 15 Q 0 30 25 15" stroke="#ffc600" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <rect x="-15" y="-60" width="30" height="20" rx="3" fill="#ffffff"/>
+    <circle cx="0" cy="-70" r="5" fill="#ffc600"/>
+  </g>
+  
+  <text x="480" y="470" font-family="Inter, sans-serif" font-size="48" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    Bienvenue !
+  </text>
+  
+  <text x="480" y="515" font-family="Inter, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    Rejoignez Bot4Univ aujourd'hui
+  </text>
+  
+  <text x="480" y="570" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" opacity="0.8">
+    Créez votre compte en quelques secondes
+  </text>
+  
+  <!-- Benefits List -->
+  <g transform="translate(250, 640)">
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <text x="25" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" font-weight="500">Accès illimité à l'assistant IA</text>
+  </g>
+  <g transform="translate(250, 685)">
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <text x="25" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" font-weight="500">Historique de conversations sauvegardé</text>
+  </g>
+  <g transform="translate(250, 730)">
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <text x="25" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" font-weight="500">Réponses personnalisées</text>
+  </g>
+  <g transform="translate(250, 775)">
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <text x="25" y="5" font-family="Inter, sans-serif" font-size="16" fill="#ffffff" font-weight="500">100% gratuit pour les étudiants</text>
+  </g>
+  
+  <!-- Right Panel - Register Form -->
+  <g transform="translate(960, 0)">
+    <!-- Header -->
+    <text x="480" y="150" font-family="Inter, sans-serif" font-size="36" font-weight="bold" fill="#212529" text-anchor="middle">
+      Créer un compte
+    </text>
+    
+    <text x="480" y="190" font-family="Inter, sans-serif" font-size="16" fill="#6c757d" text-anchor="middle">
+      Commencez votre parcours avec Bot4Univ
+    </text>
+    
+    <!-- Register Form Container -->
+    <rect x="280" y="230" width="400" height="640" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
+    
+    <!-- Full Name Field -->
+    <text x="310" y="275" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Nom complet
+    </text>
+    <rect x="310" y="285" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="314" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      Jean Dupont
+    </text>
+    
+    <!-- Email Field -->
+    <text x="310" y="365" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Adresse email universitaire
+    </text>
+    <rect x="310" y="375" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="404" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      votre.email@univ-douala.cm
+    </text>
+    
+    <!-- Student ID Field -->
+    <text x="310" y="455" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Matricule (optionnel)
+    </text>
+    <rect x="310" y="465" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="494" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      20L1234
+    </text>
+    
+    <!-- Password Field -->
+    <text x="310" y="545" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Mot de passe
+    </text>
+    <rect x="310" y="555" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="584" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      ••••••••
+    </text>
+    
+    <!-- Password Strength Indicator -->
+    <rect x="310" y="610" width="113" height="4" rx="2" fill="#28a745"/>
+    <rect x="426" y="610" width="113" height="4" rx="2" fill="#ffc107"/>
+    <rect x="542" y="610" width="108" height="4" rx="2" fill="#e9ecef"/>
+    <text x="310" y="630" font-family="Inter, sans-serif" font-size="12" fill="#28a745">
+      Force: Moyenne
+    </text>
+    
+    <!-- Confirm Password Field -->
+    <text x="310" y="665" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#212529">
+      Confirmer le mot de passe
+    </text>
+    <rect x="310" y="675" width="340" height="48" rx="6" fill="#f8f9fa" stroke="#ced4da" stroke-width="1"/>
+    <text x="325" y="704" font-family="Inter, sans-serif" font-size="14" fill="#6c757d">
+      ••••••••
+    </text>
+    
+    <!-- Terms Checkbox -->
+    <rect x="310" y="745" width="20" height="20" rx="4" fill="#ffc600" stroke="#ffc600" stroke-width="1.5"/>
+    <path d="M 314 755 L 318 759 L 326 751" stroke="#07294d" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="340" y="760" font-family="Inter, sans-serif" font-size="13" fill="#495057">
+      J'accepte les 
+      <tspan fill="#07294d" style="text-decoration: underline;">conditions d'utilisation</tspan>
+    </text>
+    
+    <!-- Register Button -->
+    <rect x="310" y="790" width="340" height="52" rx="8" fill="#ffc600" style="cursor: pointer;"/>
+    <text x="480" y="821" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#07294d" text-anchor="middle">
+      Créer mon compte
+    </text>
+    
+    <!-- Sign In Link -->
+    <text x="480" y="890" font-family="Inter, sans-serif" font-size="14" fill="#6c757d" text-anchor="middle">
+      Vous avez déjà un compte ?
+      <tspan fill="#07294d" font-weight="600" style="cursor: pointer; text-decoration: underline;"> Se connecter</tspan>
+    </text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="960" y="1040" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">
+    © 2025 Bot4Univ - Groupe 19 | Université de Douala
+  </text>
+</svg>

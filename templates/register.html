@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Créer un compte — Bot4Univ</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body class="auth-page">
+    <div class="auth-container">
+      <!-- Left Panel - Branding -->
+      <div class="auth-branding">
+        <div class="branding-content">
+          <div class="robot-logo">
+            <div class="robot-face">
+              <div class="robot-eye left"></div>
+              <div class="robot-eye right"></div>
+              <div class="robot-smile"></div>
+            </div>
+            <div class="robot-antenna"></div>
+          </div>
+          <h1 class="branding-title">Bienvenue !</h1>
+          <p class="branding-subtitle">Rejoignez Bot4Univ aujourd'hui</p>
+          <p class="branding-desc">Créez votre compte en quelques secondes</p>
+          
+          <ul class="feature-list">
+            <li><span class="check-icon">●</span> Accès illimité à l'assistant IA</li>
+            <li><span class="check-icon">●</span> Historique de conversations sauvegardé</li>
+            <li><span class="check-icon">●</span> Réponses personnalisées</li>
+            <li><span class="check-icon">●</span> 100% gratuit pour les étudiants</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Panel - Register Form -->
+      <div class="auth-form-panel">
+        <div class="auth-form-container register-form">
+          <h2 class="form-title">Créer un compte</h2>
+          <p class="form-subtitle">Commencez votre parcours avec Bot4Univ</p>
+
+          <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+          <form id="registerForm" class="auth-form">
+            <div class="form-group">
+              <label for="fullName" class="form-label">Nom complet</label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                class="form-input"
+                placeholder="Jean Dupont"
+                required
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Adresse email universitaire</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input"
+                placeholder="votre.email@univ-douala.cm"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="matricule" class="form-label">Matricule (optionnel)</label>
+              <input 
+                type="text" 
+                id="matricule" 
+                name="matricule" 
+                class="form-input"
+                placeholder="20L1234"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Mot de passe</label>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-input"
+                placeholder="••••••••"
+                required
+                autocomplete="new-password"
+              />
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bar">
+                  <div class="strength-fill" id="strengthFill"></div>
+                </div>
+                <span class="strength-text" id="strengthText">Force: Faible</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword" class="form-label">Confirmer le mot de passe</label>
+              <input 
+                type="password" 
+                id="confirmPassword" 
+                name="confirmPassword" 
+                class="form-input"
+                placeholder="••••••••"
+                required
+                autocomplete="new-password"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="terms" id="terms" required />
+                <span>
+                  J'accepte les 
+                  <a href="/terms" class="link-primary">conditions d'utilisation</a>
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-auth-primary" id="registerBtn">
+              Créer mon compte
+            </button>
+
+            <p class="form-footer">
+              Vous avez déjà un compte ? 
+              <a href="/login" class="link-primary">Se connecter</a>
+            </p>
+          </form>
+        </div>
+
+        <footer class="auth-footer">
+          © 2025 Bot4Univ - Groupe 19 | Université de Douala
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // Password strength indicator
+      const passwordInput = document.getElementById('password');
+      const strengthFill = document.getElementById('strengthFill');
+      const strengthText = document.getElementById('strengthText');
+
+      passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        let strength = 0;
+        let strengthLabel = 'Faible';
+        let color = '#dc3545';
+
+        if (password.length >= 8) strength++;
+        if (/[A-Z]/.test(password)) strength++;
+        if (/[a-z]/.test(password)) strength++;
+        if (/\d/.test(password)) strength++;
+        if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+        if (strength >= 4) {
+          strengthLabel = 'Fort';
+          color = '#28a745';
+        } else if (strength >= 3) {
+          strengthLabel = 'Moyen';
+          color = '#ffc600';
+        }
+
+        const percentage = (strength / 5) * 100;
+        strengthFill.style.width = percentage + '%';
+        strengthFill.style.backgroundColor = color;
+        strengthText.textContent = 'Force: ' + strengthLabel;
+        strengthText.style.color = color;
+      });
+
+      // Handle registration form submission
+      document.getElementById('registerForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const errorDiv = document.getElementById('errorMessage');
+        const registerBtn = document.getElementById('registerBtn');
+        
+        errorDiv.style.display = 'none';
+
+        // Validate passwords match
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        if (password !== confirmPassword) {
+          errorDiv.textContent = 'Les mots de passe ne correspondent pas';
+          errorDiv.style.display = 'block';
+          return;
+        }
+
+        registerBtn.disabled = true;
+        registerBtn.textContent = 'Création...';
+
+        const formData = {
+          full_name: document.getElementById('fullName').value,
+          email: document.getElementById('email').value,
+          password: password,
+          matricule: document.getElementById('matricule').value
+        };
+
+        try {
+          const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            alert('Compte créé avec succès ! Un email de vérification a été envoyé.');
+            window.location.href = '/login';
+          } else {
+            errorDiv.textContent = data.error || 'Erreur lors de la création du compte';
+            errorDiv.style.display = 'block';
+            registerBtn.disabled = false;
+            registerBtn.textContent = 'Créer mon compte';
+          }
+        } catch (error) {
+          console.error('Registration error:', error);
+          errorDiv.textContent = 'Erreur de connexion au serveur';
+          errorDiv.style.display = 'block';
+          registerBtn.disabled = false;
+          registerBtn.textContent = 'Créer mon compte';
+        }
+      });
+    </script>
+  </body>
+</html>

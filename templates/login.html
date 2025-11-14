@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connexion — Bot4Univ</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body class="auth-page">
+    <div class="auth-container">
+      <!-- Left Panel - Branding -->
+      <div class="auth-branding">
+        <div class="branding-content">
+          <div class="robot-logo">
+            <div class="robot-face">
+              <div class="robot-eye left"></div>
+              <div class="robot-eye right"></div>
+              <div class="robot-smile"></div>
+            </div>
+            <div class="robot-antenna"></div>
+          </div>
+          <h1 class="branding-title">Bot4Univ</h1>
+          <p class="branding-subtitle">Assistant Universitaire Intelligent</p>
+          <p class="branding-desc">Simplifiez vos démarches de préinscription</p>
+          
+          <ul class="feature-list">
+            <li><span class="check-icon">✓</span> Disponible 24/7</li>
+            <li><span class="check-icon">✓</span> Réponses instantanées</li>
+            <li><span class="check-icon">✓</span> Sécurisé et confidentiel</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Panel - Login Form -->
+      <div class="auth-form-panel">
+        <div class="auth-form-container">
+          <h2 class="form-title">Connexion</h2>
+          <p class="form-subtitle">Accédez à votre assistant personnalisé</p>
+
+          <div id="errorMessage" class="error-message" style="display: none;"></div>
+          <div id="successMessage" class="success-message" style="display: none;"></div>
+
+          <form id="loginForm" class="auth-form">
+            <div class="form-group">
+              <label for="email" class="form-label">Adresse email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input"
+                placeholder="votre.email@univ-douala.cm"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="form-label">Mot de passe</label>
+              <div class="password-input-wrapper">
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  class="form-input"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="current-password"
+                />
+                <button type="button" class="toggle-password" aria-label="Afficher/Masquer le mot de passe">
+                  <span class="eye-icon">👁️</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-options">
+              <label class="checkbox-label">
+                <input type="checkbox" name="remember" id="remember" />
+                <span>Se souvenir de moi</span>
+              </label>
+              <a href="/forgot-password" class="link-primary">Mot de passe oublié ?</a>
+            </div>
+
+            <button type="submit" class="btn-auth-primary" id="loginBtn">
+              Se connecter
+            </button>
+
+            <div class="divider">
+              <span>OU</span>
+            </div>
+
+            <button type="button" class="btn-auth-secondary">
+              <span class="google-icon">G</span>
+              Continuer avec Google
+            </button>
+
+            <p class="form-footer">
+              Pas encore de compte ? 
+              <a href="/register" class="link-primary">Créer un compte</a>
+            </p>
+          </form>
+        </div>
+
+        <footer class="auth-footer">
+          © 2025 Bot4Univ - Groupe 19 | Université de Douala
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // Toggle password visibility
+      document.querySelector('.toggle-password').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+      });
+
+      // Handle login form submission
+      document.getElementById('loginForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const errorDiv = document.getElementById('errorMessage');
+        const successDiv = document.getElementById('successMessage');
+        const loginBtn = document.getElementById('loginBtn');
+        
+        errorDiv.style.display = 'none';
+        successDiv.style.display = 'none';
+        loginBtn.disabled = true;
+        loginBtn.textContent = 'Connexion...';
+
+        const formData = {
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          remember: document.getElementById('remember').checked
+        };
+
+        try {
+          const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            successDiv.textContent = 'Connexion réussie ! Redirection...';
+            successDiv.style.display = 'block';
+            setTimeout(() => {
+              window.location.href = '/app';
+            }, 1000);
+          } else {
+            errorDiv.textContent = data.error || 'Erreur lors de la connexion';
+            errorDiv.style.display = 'block';
+            loginBtn.disabled = false;
+            loginBtn.textContent = 'Se connecter';
+          }
+        } catch (error) {
+          console.error('Login error:', error);
+          errorDiv.textContent = 'Erreur de connexion au serveur';
+          errorDiv.style.display = 'block';
+          loginBtn.disabled = false;
+          loginBtn.textContent = 'Se connecter';
+        }
+      });
+
+      // Check for verification success
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('verified') === 'true') {
+        document.getElementById('successMessage').textContent = 'Email vérifié avec succès !';
+        document.getElementById('successMessage').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>

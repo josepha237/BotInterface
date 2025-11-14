@@ -6,25 +6,30 @@
   <!-- Background -->
   <rect width="375" height="667" fill="#f8f9fa"/>
   
-  <!-- Header Section -->
+  <!-- Header Section with gradient -->
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
+    </linearGradient>
+  </defs>
   <g id="header">
-    <rect width="375" height="60" fill="#007bff"/>
+    <rect width="375" height="60" fill="url(#headerGradient)"/>
     
     <!-- Back button -->
     <g transform="translate(15, 20)">
-      <polygon points="20,10 8,10 13,5 12,4 5,10 12,16 13,15 8,10 20,10" fill="#ffffff"/>
+      <polygon points="20,10 8,10 13,5 12,4 5,10 12,16 13,15 8,10 20,10" fill="#ffc600"/>
     </g>
     
     <!-- Title -->
-    <text x="187.5" y="38" font-family="Inter, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" font-weight="600">
-      🤖 BotInterface
+    <text x="187.5" y="38" font-family="Inter, sans-serif" font-size="18" fill="#ffc600" text-anchor="middle" font-weight="600">
+      🤖 Bot4Univ
     </text>
     
-    <!-- More options icon -->
-    <g transform="translate(335, 20)">
-      <circle cx="10" cy="4" r="2" fill="#ffffff"/>
-      <circle cx="10" cy="10" r="2" fill="#ffffff"/>
-      <circle cx="10" cy="16" r="2" fill="#ffffff"/>
+    <!-- Logout icon -->
+    <g transform="translate(325, 20)">
+      <rect width="30" height="20" rx="10" fill="none" stroke="#ffc600" stroke-width="1.5"/>
+      <text x="15" y="15" font-family="Inter, sans-serif" font-size="12" fill="#ffc600" text-anchor="middle">🚪</text>
     </g>
   </g>
   
@@ -32,8 +37,8 @@
   <g id="chat-area">
     <!-- Message 1 - User -->
     <g id="message-user-1" transform="translate(0, 80)">
-      <rect x="80" y="0" width="280" height="60" rx="12" fill="#e3f2fd"/>
-      <text x="90" y="23" font-family="Inter, sans-serif" font-size="14" fill="#212529" font-weight="500">
+      <rect x="80" y="0" width="280" height="60" rx="12" fill="#fff9e6"/>
+      <text x="90" y="23" font-family="Inter, sans-serif" font-size="14" fill="#07294d" font-weight="500">
         Bonjour ! Comment ça va ?
       </text>
       <text x="350" y="50" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="end">
@@ -44,10 +49,10 @@
     <!-- Message 2 - Bot -->
     <g id="message-bot-1" transform="translate(0, 155)">
       <!-- Bot avatar -->
-      <circle cx="25" cy="25" r="18" fill="#007bff"/>
-      <text x="25" y="30" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">
-        B
-      </text>
+      <circle cx="25" cy="25" r="18" fill="#07294d"/>
+      <circle cx="21" cy="22" r="2" fill="#ffc600"/>
+      <circle cx="29" cy="22" r="2" fill="#ffc600"/>
+      <path d="M 21 27 Q 25 30 29 27" stroke="#ffc600" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       
       <rect x="50" y="0" width="310" height="90" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
       <text x="60" y="20" font-family="Inter, sans-serif" font-size="14" fill="#212529">
@@ -66,7 +71,7 @@
     
     <!-- Message 3 - User -->
     <g id="message-user-2" transform="translate(0, 260)">
-      <rect x="50" y="0" width="310" height="75" rx="12" fill="#e3f2fd"/>
+      <rect x="50" y="0" width="310" height="75" rx="12" fill="#fff9e6"/>
       <text x="60" y="23" font-family="Inter, sans-serif" font-size="14" fill="#212529" font-weight="500">
         J'ai besoin d'aide pour mon
       </text>
@@ -81,10 +86,10 @@
     <!-- Message 4 - Bot -->
     <g id="message-bot-2" transform="translate(0, 350)">
       <!-- Bot avatar -->
-      <circle cx="25" cy="25" r="18" fill="#007bff"/>
-      <text x="25" y="30" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">
-        B
-      </text>
+      <circle cx="25" cy="25" r="18" fill="#07294d"/>
+      <circle cx="21" cy="22" r="2" fill="#ffc600"/>
+      <circle cx="29" cy="22" r="2" fill="#ffc600"/>
+      <path d="M 21 27 Q 25 30 29 27" stroke="#ffc600" stroke-width="1.2" fill="none" stroke-linecap="round"/>
       
       <rect x="50" y="0" width="310" height="105" rx="12" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
       <text x="60" y="20" font-family="Inter, sans-serif" font-size="14" fill="#212529">
@@ -112,17 +117,17 @@
     <line x1="0" y1="587" x2="375" y2="587" stroke="#dee2e6" stroke-width="1"/>
     
     <!-- Input field - with text -->
-    <rect x="15" y="602" width="290" height="50" rx="25" fill="#ffffff" stroke="#007bff" stroke-width="1.5"/>
-    <text x="30" y="632" font-family="Inter, sans-serif" font-size="14" fill="#212529">
+    <rect x="15" y="602" width="290" height="50" rx="25" fill="#ffffff" stroke="#07294d" stroke-width="1.5"/>
+    <text x="30" y="632" font-family="Inter, sans-serif" font-size="14" fill="#07294d">
       Full-stack avec Flask
     </text>
     
     <!-- Send button - active -->
-    <circle cx="337.5" cy="627" r="22" fill="#007bff"/>
-    <polygon points="330,622 345,627 330,632" fill="#ffffff"/>
+    <circle cx="337.5" cy="627" r="22" fill="#ffc600"/>
+    <polygon points="330,622 345,627 330,632" fill="#07294d"/>
   </g>
   
   <!-- Scroll indicator -->
   <rect x="372" y="200" width="3" height="300" rx="1.5" fill="#e9ecef"/>
-  <rect x="372" y="200" width="3" height="100" rx="1.5" fill="#007bff" opacity="0.5"/>
+  <rect x="372" y="200" width="3" height="100" rx="1.5" fill="#07294d" opacity="0.5"/>
 </svg>

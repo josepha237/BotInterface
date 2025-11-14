@@ -6,13 +6,19 @@
   <!-- Background with gradient -->
   <defs>
     <linearGradient id="hero-gradient-mobile" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#007bff;stop-opacity:0.1" />
-      <stop offset="100%" style="stop-color:#e3f2fd;stop-opacity:0.2" />
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#e8f4ff;stop-opacity:0.2" />
     </linearGradient>
     
     <linearGradient id="button-gradient-mobile" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0056b3;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#007bff;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#051d36;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#092e56;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#07294d;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="header-gradient-mobile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#07294d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#092e56;stop-opacity:1" />
     </linearGradient>
   </defs>
   
@@ -26,18 +32,27 @@
     
     <!-- Logo & Brand -->
     <g transform="translate(20, 18)">
-      <circle cx="12" cy="12" r="12" fill="#007bff"/>
-      <text x="12" y="16" font-family="Inter, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
-      <text x="32" y="18" font-family="Inter, sans-serif" font-size="16" fill="#007bff" font-weight="700">
-        BotInterface
+      <circle cx="12" cy="12" r="12" fill="#07294d"/>
+      <circle cx="9" cy="10" r="1.5" fill="#ffc600"/>
+      <circle cx="15" cy="10" r="1.5" fill="#ffc600"/>
+      <path d="M 9 14 Q 12 17 15 14" stroke="#ffc600" stroke-width="1" fill="none" stroke-linecap="round"/>
+      <text x="32" y="18" font-family="Inter, sans-serif" font-size="16" fill="#07294d" font-weight="700">
+        Bot4Univ
       </text>
     </g>
     
-    <!-- Menu hamburger -->
-    <g transform="translate(335, 18)">
-      <rect width="20" height="2.5" rx="1.25" fill="#007bff"/>
-      <rect y="7" width="20" height="2.5" rx="1.25" fill="#007bff"/>
-      <rect y="14" width="20" height="2.5" rx="1.25" fill="#007bff"/>
+    <!-- Auth Buttons Mini (for mobile nav) -->
+    <g transform="translate(240, 15)">
+      <rect width="55" height="30" rx="15" fill="none" stroke="#07294d" stroke-width="1.5"/>
+      <text x="27.5" y="20" font-family="Inter, sans-serif" font-size="11" fill="#07294d" text-anchor="middle" font-weight="600">
+        Connexion
+      </text>
+    </g>
+    <g transform="translate(305, 15)">
+      <rect width="55" height="30" rx="15" fill="#ffc600"/>
+      <text x="27.5" y="20" font-family="Inter, sans-serif" font-size="11" fill="#07294d" text-anchor="middle" font-weight="700">
+        Inscription
+      </text>
     </g>
   </g>
   
@@ -58,24 +73,26 @@
       <rect x="0" y="0" width="300" height="220" rx="15" fill="#ffffff" stroke="#dee2e6" stroke-width="2"/>
       
       <!-- Mockup Header -->
-      <rect x="0" y="0" width="300" height="45" rx="15" fill="#007bff"/>
-      <rect x="0" y="15" width="300" height="30" fill="#007bff"/>
-      <text x="150" y="32" font-family="Inter, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600">
-        🤖 BotInterface
+      <rect x="0" y="0" width="300" height="45" rx="15" fill="#07294d"/>
+      <rect x="0" y="15" width="300" height="30" fill="#07294d"/>
+      <text x="150" y="32" font-family="Inter, sans-serif" font-size="14" fill="#ffc600" text-anchor="middle" font-weight="600">
+        🤖 Bot4Univ
       </text>
       
       <!-- Chat messages preview -->
       <g transform="translate(15, 60)">
         <!-- User message -->
-        <rect x="110" y="0" width="160" height="35" rx="8" fill="#e3f2fd"/>
-        <text x="120" y="22" font-family="Inter, sans-serif" font-size="11" fill="#212529">
+        <rect x="110" y="0" width="160" height="35" rx="8" fill="#fff9e6"/>
+        <text x="120" y="22" font-family="Inter, sans-serif" font-size="11" fill="#07294d">
           Comment ça marche ?
         </text>
         
         <!-- Bot message -->
         <g transform="translate(0, 45)">
-          <circle cx="12" cy="12" r="12" fill="#007bff"/>
-          <text x="12" y="16" font-family="Inter, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
+          <circle cx="12" cy="12" r="12" fill="#07294d"/>
+          <circle cx="9" cy="10" r="1.5" fill="#ffc600"/>
+          <circle cx="15" cy="10" r="1.5" fill="#ffc600"/>
+          <path d="M 9 13 Q 12 15 15 13" stroke="#ffc600" stroke-width="0.8" fill="none" stroke-linecap="round"/>
           <rect x="30" y="0" width="240" height="55" rx="8" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
           <text x="40" y="16" font-family="Inter, sans-serif" font-size="10" fill="#212529">
             Posez vos questions et je vous
@@ -95,15 +112,15 @@
         <text x="12" y="18" font-family="Inter, sans-serif" font-size="10" fill="#adb5bd">
           Tapez votre message...
         </text>
-        <circle cx="265" cy="14" r="13" fill="#007bff"/>
-        <polygon points="260,11 270,14 260,17" fill="#ffffff"/>
+        <circle cx="265" cy="14" r="13" fill="#ffc600"/>
+        <polygon points="260,11 270,14 260,17" fill="#07294d"/>
       </g>
     </g>
     
   <!-- CTA Button (moved up: was 460, now 435 for better fold utilization) -->
   <g transform="translate(37.5, 435)">
-      <rect width="300" height="55" rx="27.5" fill="url(#button-gradient-mobile)"/>
-      <text x="150" y="35" font-family="Inter, sans-serif" font-size="17" fill="#ffffff" text-anchor="middle" font-weight="600">
+      <rect width="300" height="55" rx="27.5" fill="#ffc600"/>
+      <text x="150" y="35" font-family="Inter, sans-serif" font-size="17" fill="#07294d" text-anchor="middle" font-weight="700">
         🚀 Essayer gratuitement
       </text>
     </g>
@@ -125,8 +142,8 @@
     
     <!-- Feature 1 -->
     <g transform="translate(37.5, 30)">
-      <circle cx="20" cy="20" r="20" fill="#e3f2fd"/>
-      <text x="20" y="28" font-family="Inter, sans-serif" font-size="18" fill="#007bff" text-anchor="middle">💬</text>
+      <circle cx="20" cy="20" r="20" fill="#e8f4ff"/>
+      <text x="20" y="28" font-family="Inter, sans-serif" font-size="18" fill="#07294d" text-anchor="middle">💬</text>
       <text x="55" y="18" font-family="Inter, sans-serif" font-size="15" fill="#212529" font-weight="600">
         Interface Intuitive
       </text>
@@ -162,8 +179,8 @@
   
   <!-- Footer CTA (moved beneath features section for coherent flow) -->
   <g transform="translate(37.5, 820)">
-    <rect width="300" height="50" rx="25" fill="none" stroke="#007bff" stroke-width="2"/>
-    <text x="150" y="32" font-family="Inter, sans-serif" font-size="15" fill="#007bff" text-anchor="middle" font-weight="600">
+    <rect width="300" height="50" rx="25" fill="none" stroke="#07294d" stroke-width="2"/>
+    <text x="150" y="32" font-family="Inter, sans-serif" font-size="15" fill="#07294d" text-anchor="middle" font-weight="600">
       📖 En savoir plus
     </text>
   </g>

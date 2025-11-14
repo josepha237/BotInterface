@@ -11,6 +11,7 @@ from database.db import init_db, close_db
 from route.page_routes import page_bp
 from route.chat_routes import chat_bp
 from route.ai_routes import ai_bp
+from route.auth_routes import auth_bp
 
 load_dotenv()
 
@@ -40,6 +41,7 @@ app.teardown_appcontext(close_db)
 app.register_blueprint(page_bp)
 app.register_blueprint(chat_bp)
 app.register_blueprint(ai_bp)
+app.register_blueprint(auth_bp)
 
 
 @app.context_processor

@@ -1,45 +1,88 @@
-%% System Architecture for BotInterface
-%% Simplified labels for compatibility
-flowchart LR
-	%% Frontend
-	subgraph Browser
+%% System Architecture with Authentication
+flowchart TB
+	%% Frontend Layer
+	subgraph Browser[Browser Layer]
 		direction TB
-		UI[index.html]
+		Landing[landing.html]
+		Login[login.html]
+		Register[register.html]
+		Chat[index.html]
 		CSS[styles.css]
 		JS[index.js]
+		AuthJS[auth.js]
 	end
 
-	%% Backend
-	subgraph Flask
+	%% Backend Layer
+	subgraph Flask[Flask Backend]
 		direction TB
-		Routes["Routes: GET /, POST /api/chat, GET /api/history"]
-		Service[Chat Service]
+		
+		subgraph Routes[Route Blueprints]
+			PageRoutes[page_routes.py]
+			ChatRoutes[chat_routes.py]
+			AuthRoutes[auth_routes.py]
+			AIRoutes[ai_routes.py]
+		end
+		
+		subgraph Services[Service Layer]
+			ChatService[Chat Service]
+			AuthService[Auth Service]
+			GeminiService[Gemini Service]
+		end
+		
+		subgraph Middleware
+			AuthMiddleware[JWT Auth Middleware]
+			RateLimiter[Rate Limiter]
+		end
 	end
 
-	%% External dependency
-	subgraph External
-		BotAPI[(Bot Provider API)]
+	%% Data Layer
+	subgraph Storage[Data Storage]
+		direction TB
+		SQLite[(SQLite Database)]
+		SessionStore[(Session Store)]
+		Cache[(Cache - Optional)]
 	end
 
-	%% Optional storage (in-memory or Redis)
-	subgraph Storage
-		Sessions[(Sessions)]
+	%% External Services
+	subgraph External[External APIs]
+		Gemini[(Google Gemini API)]
+		Email[(Email Service - Optional)]
 	end
 
-	%% Static asset relations
-	Routes --> UI
-	Routes --> CSS
-	Routes --> JS
+	%% Connections - Frontend to Routes
+	Landing --> PageRoutes
+	Login --> AuthRoutes
+	Register --> AuthRoutes
+	Chat --> ChatRoutes
+	JS --> ChatRoutes
+	AuthJS --> AuthRoutes
 
-	%% Browser runtime
-	UI --> JS
-	JS -->|fetch| Routes
-	Routes --> Service
-	Service --> BotAPI
-	BotAPI --> Service
-	Service --> Routes
-	Routes --> JS
-	JS --> UI
+	%% Routes to Services
+	PageRoutes --> ChatService
+	ChatRoutes --> ChatService
+	AuthRoutes --> AuthService
+	AIRoutes --> GeminiService
 
-	%% Sessions linkage
-	Routes <---> Sessions
+	%% Middleware
+	ChatRoutes --> AuthMiddleware
+	AIRoutes --> AuthMiddleware
+	AuthMiddleware --> RateLimiter
+
+	%% Services to Storage
+	ChatService --> SQLite
+	AuthService --> SQLite
+	AuthService --> SessionStore
+	ChatService --> Cache
+
+	%% Services to External
+	GeminiService --> Gemini
+	AuthService --> Email
+
+	%% Static Assets
+	PageRoutes --> Landing
+	PageRoutes --> Login
+	PageRoutes --> Register
+	PageRoutes --> Chat
+	PageRoutes --> CSS
+	PageRoutes --> JS
+	PageRoutes --> AuthJS

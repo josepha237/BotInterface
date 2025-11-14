@@ -81,28 +81,41 @@ Conçu avec les dernières technologies d'intelligence artificielle (Google Gemi
 - ✅ **Boutons d'action** - Accès direct au chat et au portail de préinscription SYSTHAG
 - ✅ **Statistiques** - 100% Open Source, 24/7 Disponible, ∞ Questions
 - ✅ **Footer personnalisé** - Crédits Groupe 19 et Dr Justin Moskolai
+- ✅ **Authentification** - Boutons de connexion et inscription dans la barre de navigation
 
 ### 💬 Interface de Chat
 - ✅ **Chat en temps réel** - Échanges instantanés avec l'assistant IA Gemini
 - ✅ **Interface intuitive** - Design moderne inspiré des applications de messagerie
 - ✅ **Bannière préinscription** - Accès direct au portail SYSTHAG depuis le chat
 - ✅ **États visuels** - Empty state, loading, erreurs avec retry
-- ✅ **Avatar du bot** - Identité visuelle cohérente
+- ✅ **Avatar du bot** - Identité visuelle cohérente avec logo robot
 - ✅ **Historique** - Conservation et affichage des conversations via SQLite
 - ✅ **Nouveau chat** - Réinitialisation complète pour démarrer une nouvelle conversation
 - ✅ **Zone de saisie optimisée** - Hauteur réduite, meilleure visibilité des éléments
 - ✅ **Focus préinscription** - L'IA guide spécifiquement sur les démarches UDo
+- ✅ **Déconnexion** - Bouton de déconnexion sécurisé dans l'en-tête
+
+### 🔐 Système d'authentification
+- ✅ **Connexion utilisateur** - Authentification sécurisée par email et mot de passe
+- ✅ **Inscription** - Création de compte avec validation email universitaire
+- ✅ **Gestion de session** - JWT tokens pour maintenir l'état de connexion
+- ✅ **Récupération mot de passe** - Système de réinitialisation par email
+- ✅ **Vérification email** - Confirmation de l'email universitaire
+- ✅ **Protection des routes** - Accès restreint aux utilisateurs connectés
+- ✅ **Rôles utilisateur** - Différenciation étudiant/administrateur/invité
 
 ### 🎨 Design & UX
 - ✅ **Responsive Design** - Compatible desktop, tablette et mobile
 - ✅ **Design System** - Palette de couleurs cohérente (bleu universitaire)
 - ✅ **Animations** - Transitions fluides et micro-interactions
-- ✅ **Logo personnalisé** - Logo SVG Bot4Univ avec éléments académiques
+- ✅ **Logo personnalisé** - Logo SVG Bot4Univ avec robot aux yeux jaunes (#ffc600)
 - ✅ **Typographie** - Police Inter pour une lecture optimale
 - ✅ **Accessibilité** - Navigation au clavier, labels ARIA
+- ✅ **Palette moderne** - Couleur primaire navy (#07294d) et secondaire jaune (#ffc600)
 
 ### 🔌 Backend & API
 - ✅ **API REST** - Endpoints `/api/chat`, `/api/history`, `/api/ai/health`
+- ✅ **Authentification API** - Endpoints `/api/auth/login`, `/api/auth/register`, `/api/auth/logout`
 - ✅ **Gestion des sessions** - Maintien du contexte avec SQLite (UUID, timestamps)
 - ✅ **Gemini AI** - Génération de réponses via Google Gemini 2.5 Flash (obligatoire)
 - ✅ **Retry & Resilience** - Gestion automatique des erreurs transitoires (503)
@@ -110,6 +123,7 @@ Conçu avec les dernières technologies d'intelligence artificielle (Google Gemi
 - ✅ **Architecture modulaire** - Routes, services et DB séparés (MVC)
 - ✅ **Préinscription UDo** - Prompts IA optimisés pour guider sur la préinscription
 - ✅ **Configuration flexible** - Variables d'environnement via `.env`
+- ✅ **Sécurité** - Hashage bcrypt des mots de passe, tokens JWT, validation des emails
 
 ## 🏗️ Architecture
 
@@ -250,13 +264,15 @@ BotInterface/
 │   ├── db.py                  # Module de gestion DB (CRUD)
 │   └── botinterface.db        # Fichier SQLite (sessions/messages)
 │
-├── route/                      # �️ Routes Flask (Blueprints)
-│   ├── page_routes.py         # Routes pages (/, /app)
+├── route/                      # 🛣️ Routes Flask (Blueprints)
+│   ├── page_routes.py         # Routes pages (/, /app, /login, /register)
 │   ├── chat_routes.py         # Routes chat (/api/chat, /api/history)
-│   └── ai_routes.py           # Routes IA (/api/ai/health)
+│   ├── ai_routes.py           # Routes IA (/api/ai/health)
+│   └── auth_routes.py         # Routes authentification (/api/auth/*)
 │
 ├── service/                    # ⚙️ Services métier
-│   └── gemini_service.py      # Service Gemini (retry, prompts)
+│   ├── gemini_service.py      # Service Gemini (retry, prompts)
+│   └── auth_service.py        # Service authentification (bcrypt, JWT)
 │
 ├── test/                       # 🧪 Tests
 │   ├── test_db.py             # Tests DB SQLite
@@ -289,8 +305,11 @@ BotInterface/
 │       └── landing.svg        # Mockup pour landing
 │
 └── templates/                  # 📄 Templates HTML
-    ├── landing.html           # 🏠 Landing page (hero préinscription)
-    └── index.html             # 💬 Interface chat (bannière SYSTHAG)
+    ├── landing.html           # 🏠 Landing page (hero préinscription, auth buttons)
+    ├── index.html             # 💬 Interface chat (bannière SYSTHAG, logout)
+    ├── login.html             # 🔐 Page de connexion
+    ├── register.html          # 📝 Page d'inscription
+    └── forgot-password.html   # 🔑 Récupération mot de passe
 ```
 
 ## 📚 Documentation
@@ -299,9 +318,10 @@ BotInterface/
 - **[Cahier des charges (SRS)](docs/srs.pdf)** - Spécifications détaillées du projet
 
 ### Diagrammes techniques
-- **[Architecture système](docs/diagram/system_architecture.mmd)** - Vue d'ensemble de l'architecture
-- **[Diagramme de séquence](docs/diagram/sequence.mmd)** - Flux de communication avec la base de données
-- **[Modèle entité-relation](docs/diagram/entity_relationship.mmd)** - Structure des données (USER, SESSION, MESSAGE)
+- **[Architecture système](docs/diagram/system_architecture.mmd)** - Vue d'ensemble de l'architecture avec auth_routes et AuthService
+- **[Diagramme de séquence](docs/diagram/sequence.mmd)** - Flux de communication avec authentification JWT
+- **[Modèle entité-relation](docs/diagram/entity_relationship.mmd)** - Structure des données (USER, SESSION, MESSAGE, PASSWORD_RESET, LOGIN_ATTEMPT)
+- **[Cas d'utilisation](docs/diagram/use_case.mmd)** - Scénarios d'utilisation avec authentification
 - **[Cas d'utilisation](docs/diagram/use_case.mmd)** - Scénarios utilisateur et admin
 
 ### Design & Mockups
@@ -340,10 +360,12 @@ BotInterface/
 Le projet utilise un design system cohérent avec :
 
 ### Palette de couleurs
-- **Bleu principal** : `#007bff` - Confiance, technologie, académique
-- **Bleu foncé** : `#0056b3` - Accents et hover states
-- **Bleu clair** : `#e3f2fd` - Backgrounds et états secondaires
-- **Vert** : `#28a745` - Succès, validation, badges de confiance
+- **Navy principal** : `#07294d` - Confiance, autorité, académique (couleur de base)
+- **Navy intermédiaire** : `#092e56` - Hover states, gradients, profondeur visuelle
+- **Jaune secondaire** : `#ffc600` - Énergie, innovation, accent (CTA, robot)
+- **Navy foncé** : `#051f3a` - États actifs et ombres profondes
+- **Jaune clair** : `#fff9e6` - Backgrounds et états secondaires (messages utilisateur)
+- **Vert** : `#28a745` - Succès, validation (force mot de passe)
 - **Gris** : `#6c757d` - Texte secondaire
 - **Blanc** : `#ffffff` - Fond principal
 

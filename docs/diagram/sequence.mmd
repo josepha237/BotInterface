@@ -1,24 +1,58 @@
-%% Chat message roundtrip sequence
+%% Authentication and Chat message sequence
 sequenceDiagram
 	autonumber
 	actor U as User
-	participant B as Browser (index.html)
+	participant B as Browser
 	participant F as Flask Backend
+	participant Auth as Auth Service
 	participant D as Database
-	participant A as Bot API
+	participant A as Bot API (Gemini)
 
-	U->>B: Type message + Press Send
-	B->>F: POST /api/chat { text }
-	F->>D: Save user message
-	activate F
-	F->>A: generateReply(text)
-	activate A
-	A-->>F: 200 OK { reply }
-	deactivate A
-	F->>D: Save bot reply
-	F-->>B: 200 OK { reply }
-	deactivate F
-	B->>B: Render reply in chat
+	%% Authentication Flow
+	rect rgb(200, 220, 240)
+		Note over U,D: Authentication Flow
+		U->>B: Enter credentials
+		B->>F: POST /api/auth/login { email, password }
+		F->>Auth: Validate credentials
+		Auth->>D: Check user + password hash
+		D-->>Auth: User data
+		alt Valid credentials
+			Auth->>D: Create session token
+			Auth-->>F: Session token + user data
+			F-->>B: 200 OK { token, user }
+			B->>B: Store token (localStorage)
+			B->>B: Redirect to /app
+		else Invalid credentials
+			Auth-->>F: Authentication failed
+			F-->>B: 401 Unauthorized
+			B->>B: Show error message
+		end
+	end
+
+	%% Chat Flow with Authentication
+	rect rgb(220, 240, 220)
+		Note over U,A: Authenticated Chat Flow
+		U->>B: Type message + Press Send
+		B->>F: POST /api/chat { text, token }
+		F->>Auth: Verify token
+		alt Token valid
+			Auth-->>F: User authenticated
+			F->>D: Save user message
+			activate F
+			F->>A: generateReply(text)
+			activate A
+			A-->>F: 200 OK { reply }
+			deactivate A
+			F->>D: Save bot reply
+			F-->>B: 200 OK { reply }
+			deactivate F
+			B->>B: Render reply in chat
+		else Token invalid/expired
+			Auth-->>F: Token expired
+			F-->>B: 401 Unauthorized
+			B->>B: Redirect to login
+		end
+	end
 
 	Note over B: Show loading spinner while awaiting response
 

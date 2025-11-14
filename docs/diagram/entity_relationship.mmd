@@ -1,18 +1,25 @@
-%% Entity Relationship Diagram for chat data
+%% Entity Relationship Diagram for chat data with authentication
 erDiagram
 	USER {
 		int id PK
-		string email
+		string email UK "unique, required"
+		string password_hash "bcrypt hashed"
 		string display_name
+		string role "student|admin"
+		boolean is_verified "default false"
+		string verification_token "nullable"
 		datetime created_at
+		datetime last_login "nullable"
 	}
 
 	SESSION {
 		int id PK
 		int user_id FK
+		string session_token UK "UUID"
 		string status "active|closed"
 		datetime started_at
 		datetime last_activity_at
+		datetime expires_at
 	}
 
 	MESSAGE {
@@ -24,5 +31,25 @@ erDiagram
 		string error "nullable"
 	}
 
+	PASSWORD_RESET {
+		int id PK
+		int user_id FK
+		string reset_token UK "UUID"
+		datetime created_at
+		datetime expires_at
+		boolean is_used "default false"
+	}
+
+	LOGIN_ATTEMPT {
+		int id PK
+		int user_id FK "nullable"
+		string email
+		string ip_address
+		boolean success
+		datetime attempted_at
+	}
+
 	USER ||--o{ SESSION : has
 	SESSION ||--o{ MESSAGE : contains
+	USER ||--o{ PASSWORD_RESET : requests
+	USER ||--o{ LOGIN_ATTEMPT : tracks
