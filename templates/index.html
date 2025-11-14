@@ -21,6 +21,7 @@
             </div>
             
             <div class="header-actions">
+                    <span class="user-name" id="userName">Chargement...</span>
                     <button class="btn-new-chat" id="newChatBtn">
                         <span class="plus-icon">+</span> Nouveau chat
                     </button>
@@ -120,6 +121,31 @@
 
     <script src="/static/js/index.js"></script>
         <script>
+            // Fetch and display user name on page load
+            async function loadUserInfo() {
+                try {
+                    const response = await fetch('/api/auth/me');
+                    if (response.ok) {
+                        const data = await response.json();
+                        const userNameEl = document.getElementById('userName');
+                        if (data.user && data.user.email) {
+                            // Display email or extract name before @
+                            const displayName = data.user.full_name || data.user.email.split('@')[0];
+                            userNameEl.textContent = `👤 ${displayName}`;
+                        }
+                    } else {
+                        // Not authenticated, redirect to login
+                        window.location.href = '/login';
+                    }
+                } catch (error) {
+                    console.error('Failed to load user info:', error);
+                    document.getElementById('userName').textContent = '👤 Utilisateur';
+                }
+            }
+            
+            // Load user info on page load
+            loadUserInfo();
+            
             // Logout functionality
             document.getElementById('logoutBtn')?.addEventListener('click', async function() {
                 if (!confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
